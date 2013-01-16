@@ -38,14 +38,28 @@
 })(jQuery, this);
 
 /**
- * Sets UI tonality
+ * Switches to the specified UI tonality
  *
  * @param tonality The tonality (dark or light)
  */
-function SetUITonality(tonality) {
+function SwitchUITonality(tonality) {
 	if (tonality == "light") {
 		$('#content').removeClass("dark");
 	} else {
 		$('#content').addClass("dark");
 	}
 }
+
+/**
+ * Sets UI tonality option
+ *
+ * @param tonality The tonality (dark or light)
+ */
+function SetUITonality(tonality) {
+	SwitchUITonality(tonality);
+	$.cookie('UITonality', tonality, { expires: 360, path: '/' });
+}
+
+// Init code
+var tonality = $.cookie('UITonality');
+if (tonality != null) { SwitchUITonality(tonality); }
