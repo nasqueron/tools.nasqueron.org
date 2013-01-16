@@ -121,10 +121,5 @@
 
   <script src="javascripts/foundation.min.js"></script>
   <script src="javascripts/app.js"></script>
-    <script>
-    $(window).load(function(){
-      $("#featured").orbit();
-    });
-    </script>
 </body>
 </html>
