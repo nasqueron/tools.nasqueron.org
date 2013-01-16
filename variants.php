@@ -46,12 +46,12 @@
   <header>
   <div class="row">
     <div class="twelve columns">
-      <h2><i class="general foundicon-tools"></i>English text variants MOTD</h2>
+      <h2><a href="/"><i class="general foundicon-tools"></i></a>English text variants MOTD</h2>
     </div>
   </div>
   <div class="row">
    <div class="six columns">
-      <p><a href="/"><i class="accessibility foundicon-question"></i></a><br />
+      <p><i class="accessibility foundicon-question"></i><br />
       Calls `fortune` and prints it as is, in jive and valspeak.
       </p>
    </div>
