@@ -1,29 +1,123 @@
-/* Artfully masterminded by ZURB  */
+@charset "utf-8";
 
-/* -------------------------------------------------- 
-   Table of Contents
------------------------------------------------------
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
+/*  -------------------------------------------------------------
+    Zed
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    Author:         Dereckson
+    Tags:           Foundation, red, gray, Ralf Lauren, vintage
+    Filename:       app.css
+    Version:        1.0
+    Created:        2013-01-16
+    Updated:        2013-01-16
+    Licence:        Creative Commons BY 3.0
+    -------------------------------------------------------------    */
 
+/*  -------------------------------------------------------------
+    Table of contents
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-/* -----------------------------------------
-   Shared Styles
------------------------------------------ */
-
-
-
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-
-
-
-
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
+    :: Main styles
+    :: Dark variation
+    :: Header
+    :: Footer
+ */
 
 
+/*  -------------------------------------------------------------
+    Main styles
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+body {
+	background-color: #2F343B;
+	background-image: url(/images/patterns/square_bg.png);
+}
+
+#content .row {
+	background-color: white;
+	min-height: 400px;
+}
+
+
+h3 {
+	font-weight: 200;
+	font-size: 1.75em;
+}
+
+/*  -------------------------------------------------------------
+    Dark variation
+
+    Dedicated to André Bertrand.
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+.dark .row {
+	background-color: black !important;
+	color: #7E827A;
+}
+
+.dark h3 {
+	color: #E3CDA4;
+}
+
+/*  -------------------------------------------------------------
+    Header
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+header {
+	background-color: #703030;
+}
+
+header, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+}
+
+header h2 {
+	color: #7E827A;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+header .row {
+	background-color: #2F343B;
+	color: white;
+	background-image: url(/images/patterns/square_bg.png);
+}
+
+header a {
+	color: white;
+}
+
+/*  -------------------------------------------------------------
+    Footer
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+footer {
+	background-color: white;
+}
+
+/*  -------------------------------------------------------------
+    Foundation Icons Fonts
+    www.zurb.com/playground/foundation-icons
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+[class*="social foundicon-"]:before        { font-family: "SocialFoundicons";          }
+[class*="general foundicon-"]:before       { font-family: "GeneralFoundicons";         }
+[class*="gen-enclosed foundicon-"]:before  { font-family: "GeneralEnclosedFoundicons"; }
+[class*="accessibility foundicon-"]:before { font-family: "AccessibilityFoundicons";   }
+
+i {
+	font-style: normal;
+}
+
+i:hover {
+	color: #498DAD;
+}
+
+#action-icons {
+	padding: 1em 1em;
+	font-size: 2em;
+	float: right;
+}
+
+header h2 i {
+	margin-right: 0.25em;
+	color: #C77966;
+}

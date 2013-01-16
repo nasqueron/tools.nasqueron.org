@@ -36,3 +36,16 @@
   }
 
 })(jQuery, this);
+
+/**
+ * Sets UI tonality
+ *
+ * @param tonality The tonality (dark or light)
+ */
+function SetUITonality(tonality) {
+	if (tonality == "light") {
+		$('#content').removeClass("dark");
+	} else {
+		$('#content').addClass("dark");
+	}
+}
