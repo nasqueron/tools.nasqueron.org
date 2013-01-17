@@ -52,7 +52,7 @@
   <div class="row">
    <div class="six columns">
       <p><i class="accessibility foundicon-question"></i><br />
-      Calls `fortune` and prints it as is, in jive and valspeak.
+      Calls `fortune` and prints it as is, in Jive and Valspeak.
       </p>
    </div>
    <div class="six columns">
@@ -99,13 +99,21 @@
   <div class="twelve columns"><hr />
       <div class="row">
         <div class="three columns">
-          <p>Col</p>
+          <p>This site is a repository of tools.</p>
+          <p>Source code should be available, under BSD license.</p>
         </div>
         <div class="three columns">
-          <p>Col</p>
+        	<dl>
+			<dt>Gerrit</dt>
+			<dd>Activity feeds</dd>
+			<dd>RSS generator</dd>
+        	</dl>
         </div>
         <div class="three columns">
-          <p>Col</p>
+        	<dl>
+			<dt>Network</dt>
+			<dd><a href="/network/mx.php">MX</a></dd>
+        	</dl>
         </div>
         <div class="three columns">
         	<dl>
