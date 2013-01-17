@@ -63,7 +63,7 @@
   </header>
 
   <!-- Body -->
-  <div id="content"><div class="row">
+  <section id="content"><div class="row">
     <div class="twelve columns">
       <div id="action-icons"><a href="?" title="Refresh this page"><i class="general foundicon-refresh"></i></a></div>
 <?php
@@ -73,9 +73,10 @@
 	echo substr(str_replace('h2', 'h3', $content), $pos1, $pos2 - $pos1);
 ?>
     </div>
-  </div></div>
+  </div></section>
 
   <!-- Call to Action Panel -->
+  <section id="feedback">
   <div class="row" style="background-color: white; padding: 0.75em 1em;">
     <div class="twelve columns">
 
@@ -93,6 +94,7 @@
       </div>
     </div>
   </div>
+  </section>
 
   <!-- Footer -->
   <footer class="row">
