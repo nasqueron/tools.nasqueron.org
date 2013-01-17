@@ -28,15 +28,12 @@
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
 body {
-	background-color: #2F343B;
-	background-image: url(/images/patterns/square_bg.png);
+	background-color: white;
 }
 
 #content .row {
-	background-color: white;
 	min-height: 400px;
 }
-
 
 h3 {
 	font-weight: 200;
@@ -62,7 +59,8 @@ h3 {
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
 header {
-	background-color: #703030;
+	background-color: #2F343B;
+	background-image: url(/images/patterns/square_bg.png);
 }
 
 header, h1, h2, h3, h4, h5, h6 {
@@ -76,9 +74,11 @@ header h2 {
 }
 
 header .row {
+	/*
 	background-color: #2F343B;
-	color: white;
 	background-image: url(/images/patterns/square_bg.png);
+	*/
+	color: white;
 }
 
 header a {
@@ -90,7 +90,8 @@ header a {
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
 footer {
-	background-color: white;
+	background-color: #703030;
+	color: white;
 }
 
 footer dl {

@@ -97,7 +97,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="row">
+  <footer><div class="row">
   <div class="twelve columns"><hr />
       <div class="row">
         <div class="three columns">
@@ -146,7 +146,7 @@
 
       </div>
   </div>
-  </footer>
+  </div></footer>
 
   <script src="javascripts/foundation.min.js"></script>
   <script src="javascripts/jquery.cookie.js"></script>
