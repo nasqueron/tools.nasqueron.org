@@ -98,6 +98,25 @@
   <footer class="row">
   <div class="twelve columns"><hr />
       <div class="row">
+        <div class="three columns">
+          <p>Col</p>
+        </div>
+        <div class="three columns">
+          <p>Col</p>
+        </div>
+        <div class="three columns">
+          <p>Col</p>
+        </div>
+        <div class="three columns">
+        	<dl>
+			<dt>Gadgets</dt>
+			<dd><a href="/gadgets/motd-variations.php">MOTD in Jive & Valspeak</a></dd>
+        	</dl>
+        </div>
+      </div>
+  </div>
+  <div class="twelve columns"><hr />
+      <div class="row">
            <div class="six columns">
                <p><strong>Options :</strong> <a href="javascript:SetUITonality('dark');">dark mode</a> | <a href="javascript:SetUITonality('light');">light mode</a></p>
            </div>

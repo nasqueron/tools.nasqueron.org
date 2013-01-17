@@ -93,6 +93,19 @@ footer {
 	background-color: white;
 }
 
+footer dl {
+	font-variant: small-caps;
+}
+
+footer dt {
+	color: #703030;
+	font-weight: 600;
+}
+
+footer dd {
+	padding-left: 1em;
+}
+
 /*  -------------------------------------------------------------
     Foundation Icons Fonts
     www.zurb.com/playground/foundation-icons
