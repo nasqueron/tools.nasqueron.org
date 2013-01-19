@@ -38,7 +38,7 @@ include('includes/document.php');
 $Session = Session::load();
 
 //Handles login or logout
-include("includes/login.php");
+//include("includes/login.php");
 
 //Gets current user information
 $CurrentUser = $Session->get_logged_user();
