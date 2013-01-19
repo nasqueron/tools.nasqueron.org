@@ -1,2 +1,6 @@
+# Sensible files
+includes/config.php
+
+# Data
 wikimedia/dev/feeds/project/*.xml
 wikimedia/dev/feeds/user/*.xml
