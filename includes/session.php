@@ -100,7 +100,7 @@ class Session {
         if (!$db->sql_query($sql)) message_die(SQL_ERROR, "Can't delete expired sessions", '', __LINE__, __FILE__, $sql);
 
         //Online -> offline
-        $sql = "UPDATE " . TABLE_SESSIONS . " SET session_resource = $resource AND session_online = 0 WHERE TIMESTAMPDIFF(SECOND, session_updated, NOW()) > $onlineDuration";
+        $sql = "UPDATE " . TABLE_SESSIONS . " SET session_online = 0 WHERE TIMESTAMPDIFF(SECOND, session_updated, NOW()) > $onlineDuration AND session_resource = $resource";
         if (!$db->sql_query($sql)) message_die(SQL_ERROR, 'Can\'t update sessions online statuses', '', __LINE__, __FILE__, $sql);
     }
     
