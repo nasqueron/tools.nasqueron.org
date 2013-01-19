@@ -22,6 +22,9 @@
 //Keruald libraries
 include('includes/core.php');
 
+//Pluton libraries
+include('includes/document.php');
+
 ////////////////////////////////////////////////////////////////////////////////
 ///
 /// Session
@@ -53,32 +56,10 @@ $CurrentUser = $Session->get_logged_user();
 /// Serves the requested page
 ///
 
-//[TODO] Understand the URL if not done yet and calls relevant script
-//[TODO] As a MVC sample, here a Xen-like approach.
-//       For a content-or iented, see the Pluton index.php
-//
-//Tip: to understand the url, get_current_url_fragments will output an array:
-//www.yourdomain.tld/planet/mars/sat?name=demios -> {'planet', 'mars', 'sat'}
+$url = get_current_url();
+$theme = $Config['Theme'];
+$document = new Document($url);
 
-/*
-$url = get_current_url_fragments();
-switch ($controller = $url[0]) {
-    case '':
-        //Calls homepage controller
-        include("controllers/home.php");
-        break;
-    
-    case 'planet':
-    case 'user':
-    case 'anotherstuff':
-        //Calls requested controller
-        include("controllers/$controller.php");
-        break;
-    
-    default:
-        header("HTTP/1.0 404 Not Found");
-        dieprint_r($url, 'Unknown URL');
-}
-*/
-
-?>
+include("themes/$theme/header.php");
+$document->render();
+include("themes/$theme/footer.php");
