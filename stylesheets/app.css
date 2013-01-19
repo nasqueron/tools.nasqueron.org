@@ -157,6 +157,11 @@ footer .extrainfos strong {
 }
 
 .dark h2 {
+	font-weight: 200;
+        color: #C77966;
+}
+
+.dark h3 {
 	color: #E3CDA4;
 }
 
