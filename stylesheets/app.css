@@ -17,10 +17,12 @@
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     :: Main styles
-    :: Dark variation
     :: Header
+    :: Content
     :: Footer
+    :: Dark variation
     :: Typography
+    :: Foundation Icons Fonts
  */
 
 
@@ -29,57 +31,38 @@
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
 body {
-	background-color: white;
+	background-color: #703030;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
-#content .row {
-	min-height: 400px;
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
 }
 
-h3 {
-	font-weight: 200;
-	font-size: 1.75em;
-}
-
-/*  -------------------------------------------------------------
-    Dark variation
-
-    Dedicated to André Bertrand.
-    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
-.dark .row {
-	background-color: black !important;
-	color: #7E827A;
-}
-
-.dark h3 {
-	color: #E3CDA4;
+h1, h3, h4, h5, h6 {
 }
 
 /*  -------------------------------------------------------------
     Header
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
+body {
+	background-image: url(/images/RalfFallsIntoFoundation/topborder.png);
+	background-repeat: repeat-x;
+	margin-top: 1.25em;
+	margin-bottom: 0;
+}
+
 header {
 	background-color: #2F343B;
 	background-image: url(/images/patterns/square_bg.png);
+	color: white
 }
 
-header, h1, h2, h3, h4, h5, h6 {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 300;
-}
-
-header h2 {
+header h1 {
 	color: #7E827A;
-	font-family: 'Source Sans Pro', sans-serif;
-}
-
-header .row {
-	/*
-	background-color: #2F343B;
-	background-image: url(/images/patterns/square_bg.png);
-	*/
-	color: white;
+	font-size: 37px;
 }
 
 header a {
@@ -87,12 +70,55 @@ header a {
 }
 
 /*  -------------------------------------------------------------
-    Footer
+    Content
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
+#content {
+	background-image: url(/images/RalfFallsIntoFoundation/contentborder.png);
+	background-repeat: repeat-x;
+	background-color: white;
+	padding-top: 1em;
+	margin-bottom: 0;
+	min-height: 400px;
+}
+
+/*  -------------------------------------------------------------
+    Footer
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 footer {
+	background-image: url(/images/RalfFallsIntoFoundation/footerborder.png);
+	background-repeat: repeat-x;
+	background-color: white;
+	margin-bottom: 0;
+	padding-top: 2em;
+
 	background-color: #703030;
 	color: white;
+
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+}
+
+footer hr {
+	width: 75%;
+	height: 1px;
+	margin: 0em auto 1em auto;
+
+	background: url(/images/RalfFallsIntoFoundation/hr.png) top center;
+	background-repeat: no-repeat;
+	border: none !important;
+}
+
+footer a {
+	color: #D6BCB1;
+}
+
+footer a:hover {
+	color: #C77966;
+}
+
+footer a:active {
+	color: #A35636;
 }
 
 footer dl {
@@ -100,12 +126,42 @@ footer dl {
 }
 
 footer dt {
-	color: #703030;
+	color: white;
 	font-weight: 600;
 }
 
 footer dd {
 	padding-left: 1em;
+}
+
+.extrainfos {
+	
+}
+
+footer .extrainfos strong {
+	font-variant: small-caps;
+}
+
+/*  -------------------------------------------------------------
+    Dark variation
+
+    Dedicated to André Bertrand.
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+#content.dark {
+	background-color: black;
+	background-image: none;
+}
+
+.dark .row {
+	color: #7E827A;
+}
+
+.dark h2 {
+	color: #E3CDA4;
+}
+
+footer.dark {
+	background-image: url(/images/RalfFallsIntoFoundation/footerborder.png);
 }
 
 /*  -------------------------------------------------------------
@@ -133,7 +189,11 @@ i {
 }
 
 i:hover {
-	color: #498DAD;
+	color: #703030;
+}
+
+footer i:hover {
+	color: #2F343B;
 }
 
 #action-icons {
@@ -142,7 +202,7 @@ i:hover {
 	float: right;
 }
 
-header h2 i {
+header h1 i {
 	margin-right: 0.25em;
 	color: #C77966;
 }
