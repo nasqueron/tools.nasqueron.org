@@ -45,13 +45,16 @@
   </div>
   <div class="row">
    <div class="six columns">
-      <?php if ($document->description) echo '<p><i class="accessibility foundicon-question"></i><br />'; ?>
-      <?= $document->description ?>
-      </p>
+<?php
+	if ($document->description) {
+		$description = str_replace('&', '<span class="ampersand">&amp;</span>', $document->description);
+		echo '<p><i class="accessibility foundicon-question"></i><br />', $description, '</p>';
+	}
+?>
    </div>
    <div class="six columns">
       <p class="right"><a href="/"><i class="accessibility foundicon-braille"></i></a><br />
-      Tools — <em>Small utilities, gadgets and scripts to perform daily tasks.</em></p>
+      Tools — <em>Small utilities, gadgets <span class="ampersand">&amp;</span> scripts to perform daily tasks.</em></p>
     </div>
   </div>
   </header>

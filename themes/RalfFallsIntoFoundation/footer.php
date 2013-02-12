@@ -38,16 +38,12 @@
            </div>
       </div>
       <div class="row extrainfos">
-        <div class="seven columns">
+        <div class="six columns">
             <p><i class="general foundicon-globe"></i> <strong>Crafted by</strong> <a href="http://www.dereckson.be/">Dereckson</a> | <strong>Powered by</strong> <a href="http://keruald.sf.net">Keruald/Pluton</a> <span class="ampersand">&</span> <a href="http://foundation.zurb.com/">Foundation</a>.</p>
         </div>
 
-        <div class="five columns">
-            <ul class="link-list right">
-              <li><a href="http://www.dereckson.be/tools">DcK Area's tools</a></li>
-              <li><a href="http://www.espace-win.org/Tools">Espace Win's tools</a></li>
-              <li><a href="http://www.toolserver.org/~dereckson/">Toolserver</a></li>
-            </ul>
+        <div class="six columns">
+            <p class="right"><i class="general foundicon-flag"></i> <strong>Git revision:</strong> <?= substr(`git rev-parse HEAD`, 0, 7) ?> | <strong>Version:</strong> alpha preview</p>
         </div>
 
       </div>
