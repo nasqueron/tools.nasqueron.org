@@ -25,6 +25,8 @@
         	<dl>
 			<dt>Gadgets</dt>
 			<dd><a href="/gadgets/motd-variations.php">MOTD in Jive <span class="ampersand">&</span> Valspeak</a></dd>
+			<dt>Start pages</dt>
+			<dd><a href="/lex">Lex</a></dd>
         	</dl>
         </div>
       </div>
