@@ -1,0 +1,12 @@
+<documents topic="infographics">
+	<document>
+		<article>parlement-fr</article>
+		<title>Le parlement Français, une gérontocratie ?</title>
+		<description>Distribution par âge des sénateurs &amp; députés.</description>
+		<head><![CDATA[
+	<link href="/includes/kendo/styles/kendo.dataviz.min.css" rel="stylesheet">
+	<script src="/includes/kendo/js/jquery.min.js"></script>
+	<script src="/includes/kendo/js/kendo.dataviz.min.js"></script>
+		]]></head>
+	</document>
+</documents>

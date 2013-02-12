@@ -175,7 +175,7 @@ function string_between ($haystack, $from, $to, $includeFrom = false, $includeTo
 	if ($pos2 === false) {
 		return substr($haystack, $pos1);
 	}
-	if ($includeTo) $pos2 += strlen($includeTo);
+	if ($includeTo) $pos2 += strlen($to);
 
 	//Gets middle part
 	return substr($haystack, $pos1, $pos2 - $pos1);

@@ -11,3 +11,51 @@ Unit testing ->
 1 is_mail("dereckson+wazza@gmail.com");
 0 is_mail("dereckson`ls`@gmail.com");
 */
+
+/**
+ * Gets an HTTP context
+ */
+function get_http_context () {
+	return stream_context_create([
+		'http' => [
+			'method' => 'GET',
+			'user_agent' => 'NasqueronTools/0.1'
+		]
+	]);
+}
+
+function get_innerHtml (DOMNode $element) {
+	$innerHtml = "";
+
+	foreach ($element->childNodes as $childNode) {
+		$dom = new DOMDocument('1.0', 'utf-8');
+		$dom->appendChild(
+			$dom->importNode($childNode, true)
+		);
+		$innerHtml .= trim($dom->saveHTML());
+	}
+
+	return $innerHtml;
+}
+
+function get_array_from_html_table($html, $stripHTML = true) {
+	$array = [];
+
+	$html = str_ireplace('<th ', '<td ', $html);
+	$html = str_ireplace('<th>', '<td>', $html);
+	$html = str_ireplace('</th>', '</td>', $html);
+	$html = str_ireplace('<th/>', '<td/>', $html); //No reason not to be as permissive as browsers.
+
+	$dom = new DOMDocument('1.0', 'utf-8');
+	$dom->loadHTML($html);
+	$rows = $dom->getElementsByTagName('tr');
+	foreach ($rows as $row) {
+		$values = [];
+		$rowCells = $row->getElementsByTagName('td');
+		foreach ($rowCells as $cell) {
+			$values[] = $stripHTML ? $cell->nodeValue : get_innerHtml($cell);
+		}
+		$array[] = $values;
+	}
+	return $array;
+}

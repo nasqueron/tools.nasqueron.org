@@ -1,0 +1,1 @@
+/home/dereckson/dev/mediawikibot/mediawikibot.php
