@@ -79,10 +79,10 @@ proc generate_index {{dir .} {index index.xml}} {
 		if [catch {
 			set pos [string first "owner email=" $data]
 			if {$pos == -1} {
-				set pos [string first "user email=" $data]
+				set pos [string first "<user email=" $data]
 			}
-			set pos2 [string first "\"" $data $pos+12]
-			set email [string range $data $pos+12 $pos2-1]
+			set pos2 [string first "\"" $data $pos+13]
+			set email [string range $data $pos+13 $pos2-1]
 
 			set pos [string first ">" $data $pos2]
 			set pos2 [string first "<" $data $pos]
