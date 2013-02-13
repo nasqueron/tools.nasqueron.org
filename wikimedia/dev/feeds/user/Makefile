@@ -7,4 +7,5 @@ index.xml: index.tmp
 	./genindex
 
 clean:
+	rm -f index.tmp
 	rm -f index.xml
