@@ -190,5 +190,3 @@ class User {
         return null;
     }
 }
-    
-?>

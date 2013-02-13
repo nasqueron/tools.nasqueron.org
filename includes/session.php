@@ -246,5 +246,3 @@ class Session {
 
 //The user_id matching anonymous user
 if (!defined('ANONYMOUS_USER')) define('ANONYMOUS_USER', -1);
-
-?>

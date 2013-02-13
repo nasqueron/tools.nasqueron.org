@@ -11,7 +11,7 @@
         <div class="three columns">
         	<dl>
 			<dt>Gerrit</dt>
-			<dd>Activity feeds</dd>
+			<dd><a href="/wikimedia/dev/feeds/">Activity feeds</a></dd>
 			<dd>RSS generator</dd>
         	</dl>
         </div>
@@ -37,7 +37,7 @@
       </div>
       <div class="row extrainfos">
         <div class="seven columns">
-            <p><i class="general foundicon-globe"></i> <strong>Service author:</strong> <a href="http://www.dereckson.be/">Dereckson</a> | <strong>Powered by</strong> <a href="http://keruald.sf.net">Keruald/Pluton</a> <span class="ampersand">&</span> <a href="http://foundation.zurb.com/">Foundation</a>.</p>
+            <p><i class="general foundicon-globe"></i> <strong>Crafted by</strong> <a href="http://www.dereckson.be/">Dereckson</a> | <strong>Powered by</strong> <a href="http://keruald.sf.net">Keruald/Pluton</a> <span class="ampersand">&</span> <a href="http://foundation.zurb.com/">Foundation</a>.</p>
         </div>
 
         <div class="five columns">
@@ -55,5 +55,6 @@
   <script src="/javascripts/foundation.min.js"></script>
   <script src="/javascripts/jquery.cookie.js"></script>
   <script src="/javascripts/app.js"></script>
+  <?= $document->footer ?>
 </body>
 </html>

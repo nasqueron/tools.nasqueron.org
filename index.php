@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * Keruald, core libraries for Pluton and Xen engines.
  * (c) 2010, Sébastien Santoro aka Dereckson, some rights reserved
  * Released under BSD license
@@ -19,11 +19,17 @@
 /// Initialization
 ///
 
+define('IN_KERUALD', true);
+define('IN_PLUTON', true);
+
 //Keruald libraries
 include('includes/core.php');
 
 //Pluton libraries
 include('includes/document.php');
+
+//Site libraries
+include('includes/core2.php');
 
 ////////////////////////////////////////////////////////////////////////////////
 ///
@@ -57,9 +63,6 @@ $CurrentUser = $Session->get_logged_user();
 ///
 
 $url = get_current_url();
-$theme = $Config['Theme'];
-$document = new Document($url);
 
-include("themes/$theme/header.php");
+$document = new Document($url);
 $document->render();
-include("themes/$theme/footer.php");

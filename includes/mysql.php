@@ -149,4 +149,3 @@ if (!defined('SQL_LAYER')) {
     //Sets SQL connexion in UTF8. PHP 5.2.3+
     $db->set_charset('utf8');
 }
-?>

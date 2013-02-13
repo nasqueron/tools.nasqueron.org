@@ -142,20 +142,43 @@ function get_extension ($file) {
     return substr($file, $dotPosition + 1);
 }
 
-/*
+/**
  * Determines if a string starts with specified substring
+ *
  * @param string $haystack the string to check
  * @param string $needle the substring to determines if it's the start
  * @param boolean $case_sensitive determines if the search must be case sensitive
  * @return boolean true if $haystack starts with $needle ; otherwise, false.
  */
 function string_starts_with ($haystack, $needle, $case_sensitive = true) {
-    if (!$case_sensitive) {
-        $haystack = strtoupper($haystack);
-        $needle = strtoupper($needle);
-    }
-    if ($haystack == $needle) return true;
-    return strpos($haystack, $needle) === 0;
+	if (!$case_sensitive) {
+		$haystack = strtoupper($haystack);
+		$needle = strtoupper($needle);
+	}
+	if ($haystack == $needle) return true;
+	return strpos($haystack, $needle) === 0;
+}
+
+/**
+ * Gets the portion of the string between $includeFrom and $includeTo
+ */
+function string_between ($haystack, $from, $to, $includeFrom = false, $includeTo = false) {
+	//Gets start position
+	$pos1 = strpos($haystack, $from);
+	if ($pos1 === false) {
+		return "";
+	}
+	if (!$includeFrom) $pos1 += strlen($from);
+
+	//Gets end position
+	$pos2 = strpos($haystack, $to, $pos1 + strlen($from));
+	if ($pos2 === false) {
+		return substr($haystack, $pos1);
+	}
+	if ($includeTo) $pos2 += strlen($includeTo);
+
+	//Gets middle part
+	return substr($haystack, $pos1, $pos2 - $pos1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -266,6 +289,20 @@ function get_current_url_fragments () {
     return explode('/', substr($url_source, 1));
 }
 
+/**
+ * Gets the URL for the specified resources
+ *
+ * @param ... string a arbitray number of path info
+ */
+function get_url_for () {
+    global $Config;
+    $url = get_server_url() . '/' . $Config[BaseURL];
+    if (func_num_args()) {
+        $url .= implode('/', func_get_args());
+    }
+    return $url;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 ///                                                                          ///
 /// URL xmlHttpRequest helpers functions                                     ///
@@ -306,5 +343,3 @@ function get_xhr_url () {
     $args = func_get_args();
     return $Config['DoURL'] . '/' .implode('/', $args);
 }
-
-?>

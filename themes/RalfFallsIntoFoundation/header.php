@@ -45,7 +45,7 @@
   </div>
   <div class="row">
    <div class="six columns">
-      <p><i class="accessibility foundicon-question"></i><br />
+      <?php if ($document->description) echo '<p><i class="accessibility foundicon-question"></i><br />'; ?>
       <?= $document->description ?>
       </p>
    </div>
@@ -57,4 +57,4 @@
   </header>
 
   <!-- Body -->
-  <section id="content"><div class="row">
+  <section id="content"<?php if (isset($_COOKIE["UITonality"]) && $_COOKIE["UITonality"] != "light") { echo " class=\"$_COOKIE[UITonality]\""; } ?>><div class="row">

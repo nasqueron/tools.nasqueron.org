@@ -53,6 +53,25 @@ class Document {
     public $head;
 
     /**
+     * Content to write at the end of the document.
+     * This is after the site footer.
+     * To write something before, use a local _footer.php file.
+     */
+    public $footer;
+
+    /**
+     * If true, doesn't print the header
+     * @var boolean
+     */
+    public $noheader = false;
+
+    /**
+     * If true, doesn't print the footer
+     * @var boolean
+     */
+    public $nofooter = false;
+
+    /**
      * Initializes a new instance of Session object
      */
     public function __construct ($url) {
@@ -80,7 +99,7 @@ class Document {
             return true;
         }
 
-        //Try other extensions
+        //Tries other extensions
 	$extensions_to_try = array('html', 'php');
 	$pathinfo = pathinfo($this->url);
 	foreach ($extensions_to_try as $ext) {
@@ -91,11 +110,22 @@ class Document {
 		}
 	}
 
-        //Handle homepages
+        //Handles homepages
 	if ($this->is_homepage($this->url)) {
 		$this->url = "_index/index.html";
 		return true;
         }
+
+	//Fixes common problems
+	if (!string_starts_with($_SERVER["REQUEST_URI"], $_SERVER["DOCUMENT_URI"])) {
+		// Webserver hasn't been configured to send directly the query to
+		// $_SERVER["DOCUMENT_URI"]. This is the engine job instead.
+                $file = substr($_SERVER["DOCUMENT_URI"], 1); //Drops initial /
+		if (file_exists($file)) {
+			$this->url = $file;
+			return true;
+		}
+	}
 
         return false;
     }
@@ -109,12 +139,7 @@ class Document {
         if ($this->find_document()) {
             $this->status = 200;
         } else {
-/*
-		print_r($this);
-		phpinfo(32);
-		die();
-*/
-            $this->url = $Config['Errorpage'];
+            $this->url = $Config['Pages']['Error404']; //TODO: choose and document error implementation
             $this->status = 404;
         }
 
@@ -216,15 +241,9 @@ class Document {
     }
 
     /**
-     * Prints the document
-     *
-     * Use this method if you don't wish to have access to any other global
-     * variables than $db, $Config, $Session and $CurrentUser.
-     *
-     * A more flexible method is the body of this method in _includes/body.php
-     * and to add in your skin <?php include('_includes/body.php'); ?>
+     * Prints the document body
      */
-    public function render () {
+    public function render_body () {
 	global $db, $Config, $Session, $CurrentUser;
 	$document = $this;
 
@@ -234,10 +253,12 @@ class Document {
         }
 
 	//Header content
-	$header = str_replace('-', '/', $this->topic) . '/_header.php';
-	if (file_exists($header)) {
+        if (!$this->noheader) {
+  	    $header = $this->get_directory() . '/_header.php';
+	    if (file_exists($header)) {
 		include($header);
-	}
+	    }
+        }
 
         //Includes file
         switch ($this->extension) {
@@ -260,21 +281,54 @@ class Document {
         }
 
 	//Footer
-	if ($footer = $this->get_footer()) {
+	if (!$nofooter && $footer = $this->get_footer()) {
             include($footer);
 	}
+    }
 
+    /**
+     * Prints the document
+     *
+     * Use this method if you don't wish to have access to any other global
+     * variables than $db, $Config, $Session and $CurrentUser.
+     *
+     * A more flexible method is the body of this method in _includes/body.php
+     * and to add in your skin <?php include('_includes/body.php'); ?>
+     */
+    function render () {
+        //Global variables for the header and the footer
+	global $db, $Config, $Session, $CurrentUser;
+	$document = $this;
+
+	//HTML output
+	$theme = $Config['Theme'];
+        if (!$this->noheader) include("themes/$theme/header.php");
+        $this->render_body();
+        if (!$this->nofooter) include("themes/$theme/footer.php");
     }
 
     /**
      * Gets the document description
      */
     function get_description () {
+	if ($this->status == 404) {
+		$this->title = "404 Not Found";
+		$this->description = "The requested resource hasn't been found.";
+		return;
+	}
+
         if ($description = self::get_description_from_documentsXml($this->topic, $this->article)) {
-            $variables = [ 'title', 'description', 'head' ];
+            $variables = [ 'title', 'description', 'head', 'footer' ];
             foreach ($variables as $variable) {
                 if (isset($description->$variable)) {
                     $this->$variable = (string)$description->$variable;
+                }
+            }
+
+            $shortTags = [ 'noheader', 'nofooter' ];
+            foreach ($shortTags as $shortTag) {
+                if (isset($description->$shortTag)) {
+		     $this->$shortTag = true;
                 }
             }
         }
@@ -297,6 +351,8 @@ class Document {
             return null;
         }
     }
-}
 
-?>
+    public function get_directory () {
+        return str_replace('-', '/', $this->topic);
+    }
+}

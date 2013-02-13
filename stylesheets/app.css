@@ -82,6 +82,14 @@ header a {
 	min-height: 400px;
 }
 
+.justify p {
+	text-align: justify;
+}
+
+.accordion h4, .accordion h5, .accordion h6 {
+	color: black;
+}
+
 /*  -------------------------------------------------------------
     Footer
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
@@ -165,6 +173,32 @@ footer .extrainfos strong {
 	color: #E3CDA4;
 }
 
+.dark h4, h5, h6 {
+	color: #7E827A;
+}
+
+.dark a {
+	color: #D6BCB1;
+}
+
+.dark a:hover {
+	color: #C77966;
+}
+
+.dark a:active {
+	color: #A35636;
+}
+
+.dark hr {
+	background-color: #101010;
+	border: none;
+	height: 1px;
+}
+
+.dark .accordion a {
+	color: #2F343B;
+}
+
 footer.dark {
 	background-image: url(/images/RalfFallsIntoFoundation/footerborder.png);
 }
@@ -177,7 +211,6 @@ footer.dark {
 	font-family: 'Caslon Ampersand';
 	margin-right: 0.1em;
 }
-
 
 /*  -------------------------------------------------------------
     Foundation Icons Fonts

@@ -107,4 +107,3 @@ function message_die ($code, $text = '', $title = '', $line = '', $file = '', $s
     
     exit;
 }
-?>
