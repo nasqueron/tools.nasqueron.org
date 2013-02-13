@@ -4,3 +4,4 @@ includes/config.php
 # Data
 wikimedia/dev/feeds/project/*.xml
 wikimedia/dev/feeds/user/*.xml
+wikimedia/dev/feeds/user/index.tmp
