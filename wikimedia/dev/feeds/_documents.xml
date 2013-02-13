@@ -1,0 +1,19 @@
+<!--
+	The following files are independant entry points able to be called directly, without index.php.
+
+	You can configure your web server to bypass Pluton for these. If you don't, Pluton will know not to print header/footer.
+-->
+<documents topic="wikimedia-dev-feeds">
+	<document>
+		<article>index</article>
+		<title>Gerrit activity feeds</title>
+		<description>Activity dashboard for projects and users.</description>
+		<head><![CDATA[<style>
+	.block-grid li {
+		text-align: center;
+		margin-bottom: 0.75em;
+	}
+  </style>]]>
+</head>
+	</document>
+</documents>
