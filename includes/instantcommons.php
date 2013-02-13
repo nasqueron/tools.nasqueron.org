@@ -12,6 +12,7 @@
  * @version 0.1
  *
  * @todo Add protection against DoS for cache mode: we can't easily fill an hard disk with this one.
+ * @todo Consider to check local existence. Currently, it depends of a nginx rule (@try_files $uri /includes/instantcommons.php).
  */
 
 /**
@@ -74,6 +75,12 @@ class InstantCommonsMedia {
 
 		$this->urlInfo = "http://commons.wikimedia.org/wiki/File:" . urlencode($this->remoteFilename);
         }
+
+	/**
+	 * Queues download operation
+	 */
+	public function queue_download () {
+	}
 
 	/**
 	 * Gets the URL of the file
@@ -152,4 +159,5 @@ $media = new InstantCommonsMedia(array_pop($url));
 
 // Serves media
 //$media->dump();
+$media->queue_download();
 $media->serve();
