@@ -1,0 +1,14 @@
+<documents topic="_index">
+	<document>
+		<article>index</article>
+		<title>Tools</title>
+		<description></description>
+		<footer><![CDATA[
+  <script type="text/javascript">
+     $(window).load(function() {
+         $('#slider').orbit();
+     });
+  </script>
+		]]></footer>
+	</document>
+</documents>
