@@ -20,6 +20,11 @@
 			<dt>Network</dt>
 			<dd><a href="/network/mx.php">MX</a></dd>
         	</dl>
+        	<dl>
+			<dt>Color</dt>
+			<dd><a href="/color/screen/">Random color screen</a></dd>
+			<dd><a href="/color/screen/879497">Gray-blue screen</a></dd>
+        	</dl>
         </div>
         <div class="three columns">
         	<dl>

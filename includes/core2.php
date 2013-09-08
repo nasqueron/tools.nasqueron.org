@@ -59,3 +59,8 @@ function get_array_from_html_table($html, $stripHTML = true) {
 	}
 	return $array;
 }
+
+//Gets current date, ISO format.
+function today () {
+	return date('Y-m-d');
+}

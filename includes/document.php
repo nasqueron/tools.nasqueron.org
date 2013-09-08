@@ -338,12 +338,7 @@ class Document {
         $topicDocuments = str_replace('-', '/', $topic) . '/_documents.xml';
         if (file_exists($topicDocuments)) {
             $xml = simplexml_load_file($topicDocuments, null, LIBXML_NOCDATA);
-            if (is_array($xml->document)) {
-                $documents = $xml->document;
-            } else {
-                $documents = [ $xml->document ];
-            }
-            foreach ($documents as $document) {
+            foreach($xml->document as $document) {
 		if ($document->article == $article) {
                     return $document;
                 }

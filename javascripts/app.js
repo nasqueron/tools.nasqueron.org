@@ -63,3 +63,13 @@ function SetUITonality(tonality) {
 // Init code
 var tonality = $.cookie('UITonality');
 if (tonality != null) { SwitchUITonality(tonality); }
+
+/**
+ * Plural: determines if a count requires the singular or the plural
+ *
+ * @param int the objects count
+ * @return string "s" if the count > 2; otherise, false.
+ */
+function s (count) {
+	return Math.abs(count) >= 2 ? "s" : "";
+}
