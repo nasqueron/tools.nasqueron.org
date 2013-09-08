@@ -1,0 +1,7 @@
+<documents topic="gadgets">
+	<document>
+		<article>index</article>
+		<title>Random generator</title>
+		<description>Gets a random number (Mersenne Twister).</description>
+	</document>
+</documents>
