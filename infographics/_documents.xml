@@ -7,6 +7,38 @@
 	<link href="/includes/kendo/styles/kendo.dataviz.min.css" rel="stylesheet">
 	<script src="/includes/kendo/js/jquery.min.js"></script>
 	<script src="/includes/kendo/js/kendo.dataviz.min.js"></script>
+	<style>
+		/* Tooltip styling */
+		.xlarger {
+			width: 600px;
+		}
+
+		.larger {
+			width: 400px;
+		}
+
+		.tooltipList {
+			margin-left: 1em !important;
+			margin-top: 0.5em;
+			margin-bottom: 0;
+		}
+		.tooltipList li {
+			font-size: 0.75em;
+			list-style: none;
+		}
+
+		.block-grid {
+			margin-top: 0.5em !important;
+		}
+
+		.block-grid li {
+			padding-bottom: 0 !important;
+		}
+
+		#svg {
+			margin-left: 2em;
+		}
+	</style>
 		]]></head>
 	</document>
 </documents>

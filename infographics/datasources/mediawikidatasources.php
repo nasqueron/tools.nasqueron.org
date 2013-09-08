@@ -110,12 +110,54 @@ class MediaWikiDataSource extends DataSource {
 		//Processes the query reply and caches it
 		$reply = array_shift($reply['query']['pages']);
 		$categories = [];
-		foreach ($reply['categories'] as $category) {
-			$categories[] = $category['title'];
+		if (count($reply['categories'])) {
+			foreach ($reply['categories'] as $category) {
+				$categories[] = $category['title'];
+			}
 		}
 		$cache->set($key, serialize($categories));
 
 		return $categories;
+	}
+
+
+	/**
+	 * Gets title from URL
+	 *
+	 * @param string The article URL
+	 * @return string The article title
+	 */
+	public static function get_title_from_url ($url) {
+		$pos = strpos($url, "/wiki/");
+		return ($pos === false) ? "" : substr($url, $pos + 6);
+	}
+
+	/**
+	 * Gets name from title
+	 *
+	 * @param string The article title
+	 * @return string The subject of the article's name
+	 */
+	public static function get_name_from_title ($title) {
+		$name = str_replace('_', ' ', urldecode($title));
+		$pos = strpos($name, '(');
+		if ($pos !== false) {
+			$name = substr($name, 0, $pos - 1);
+		}
+		return $name;
+	}
+
+	/**
+	 * Gets name from URL
+	 *
+	 * @param string The article URL
+	 * @return string The subject of the article's name
+	 */
+	public static function get_name_from_url ($url) {
+		if ($title = get_title_from_url($url)) {
+			return get_name_from_title($title);
+		}
+		return "";
 	}
 }
 
@@ -140,8 +182,6 @@ class WikipediaDataSource extends MediaWikiDataSource {
 
 /**
  * French Wikipedia data source.
- *
- * @todo use case to get a fr.wikipedia specific class: do we need fr. specific helper methods?
  */
 class FrWikipediaDataSource extends WikipediaDataSource {
 	/**
@@ -152,6 +192,25 @@ class FrWikipediaDataSource extends WikipediaDataSource {
 	 */
         public function __construct ($source = false, $mode = 'wiki') {
 		parent::__construct($source, $mode, 'fr');
+	}
+
+	/**
+	 * Gets birth year, from the category Naissance en.
+	 *
+ 	 * @param $name The person article title
+	 * @param $bypassCache If true, bypass the cache; otherwise, use the cached result if available.
+	 * @return integer|null The birth year of the person if available; otherwise, null.
+	 */
+	static public function get_birth_year ($name, $bypassCache = false) {
+		$ds = new FrWikipediaDataSource($name);
+		$categories = $ds->get_categories($bypassCache);
+		foreach ($categories as $category) {
+			$matches = [];
+			if (preg_match('/Catégorie:Naissance en ([0-9]{4})/', $category, $matches)) {
+				return $matches[1];
+			}
+		}
+		return null;
 	}
 }
 
