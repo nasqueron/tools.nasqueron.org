@@ -6,7 +6,7 @@
       <div class="row">
         <div class="three columns">
           <p>This site is a repository of tools.</p>
-          <p>This is also an experiment to create a site based on Pluton, Foundation, Hg <span class="ampersand">&</span> Nasqueron.</p>
+          <p>This is also an experiment to create a site based on Pluton, Foundation, Git <span class="ampersand">&</span> Nasqueron.</p>
         </div>
         <div class="three columns">
         	<dl>
@@ -18,7 +18,7 @@
         <div class="three columns">
         	<dl>
 			<dt>Network</dt>
-			<dd><a href="/network/mx.php">MX</a></dd>
+			<dd><a href="/network/mx">MX</a></dd>
 
 			<dt>Lists</dt>
 			<dd><a href="/lists/operations">Lists operations</a></dd>
@@ -32,7 +32,7 @@
         <div class="three columns">
         	<dl>
 			<dt>Gadgets</dt>
-			<dd><a href="/gadgets/motd-variations.php">MOTD in Jive <span class="ampersand">&</span> Valspeak</a></dd>
+			<dd><a href="/gadgets/motd-variations">MOTD in Jive <span class="ampersand">&</span> Valspeak</a></dd>
 
 			<dt>Start pages</dt>
 			<dd><a href="/lex">Lex</a></dd>
