@@ -11,3 +11,6 @@
 <script src="//maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
 <script src="/javascripts/leaflet.google.js"></script>
 <script src="LineMap.js"></script>
+<script>
+	DrawLine('<?= $_REQUEST['Line'] ? $_REQUEST['Line'] : 'C75' ?>');
+</script>

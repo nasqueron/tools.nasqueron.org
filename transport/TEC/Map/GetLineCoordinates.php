@@ -24,5 +24,9 @@ function get_stops ($line, $date = null, $bypassCache = false) {
 	return $stops;
 }
 
-$stops = get_stops($_REQUEST['line']);
+if (!$_REQUEST['line']) {
+	die('null');
+}
+$date = array_key_exists('date', $_REQUEST) ? $_REQUEST['date'] : null;
+$stops = get_stops($_REQUEST['line'], $date);
 echo json_encode($stops);

@@ -15,7 +15,8 @@ function DrawMap (line, infoLayerGroup) {
 	var GoogleMapsSat = new L.Google('SATELLITE');
 	var GoogleMapsHybrid = new L.Google('HYBRID');
 
-        map.addLayer(GoogleMapsHybrid);
+//        map.addLayer(GoogleMapsHybrid);
+        map.addLayer(OpenStreetMap);
         map.addLayer(infoLayerGroup);
 
 }
@@ -43,5 +44,3 @@ function DrawLine (line) {
     });
   });
 }
-
-DrawLine('C75');
