@@ -1,0 +1,17 @@
+<documents topic="gadgets">
+	<document>
+		<article>index</article>
+		<title>Lists tools</title>
+		<description>Tools manipulating lists.</description>
+	</document>
+	<document>
+		<article>operations</article>
+		<title>List operations</title>
+		<description>Adds, subtracts or intersects lists.</description>
+	</document>
+	<document>
+		<article>replace</article>
+		<title>List replace</title>
+		<description>Performs regexp replacement in a list</description>
+	</document>
+</documents>

@@ -75,7 +75,6 @@ function force_bare_display () {
 }
 
 $url = get_current_url();
-
 $document = new Document($url);
 if (force_bare_display()) {
 	$document->noheader = true;

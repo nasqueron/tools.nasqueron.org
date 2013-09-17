@@ -19,8 +19,11 @@
         	<dl>
 			<dt>Network</dt>
 			<dd><a href="/network/mx.php">MX</a></dd>
-        	</dl>
-        	<dl>
+
+			<dt>Lists</dt>
+			<dd><a href="/lists/operations">Lists operations</a></dd>
+			<dd><a href="/lists/replace">Lists RegExp replace</a></dd>
+
 			<dt>Color</dt>
 			<dd><a href="/color/screen/">Random color screen</a></dd>
 			<dd><a href="/color/screen/879497">Gray-blue screen</a></dd>
@@ -30,6 +33,7 @@
         	<dl>
 			<dt>Gadgets</dt>
 			<dd><a href="/gadgets/motd-variations.php">MOTD in Jive <span class="ampersand">&</span> Valspeak</a></dd>
+
 			<dt>Start pages</dt>
 			<dd><a href="/lex">Lex</a></dd>
         	</dl>

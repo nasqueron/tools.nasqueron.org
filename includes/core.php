@@ -239,43 +239,34 @@ function get_server_url () {
  */
 function get_current_url () {
     global $Config;
-            
+
     //Gets relevant URL part from relevant $_SERVER variables
     if (array_key_exists('PATH_INFO', $_SERVER)) {
         //Without mod_rewrite, and url like /index.php/controller
         //we use PATH_INFO. It's the easiest case.
         return $_SERVER["PATH_INFO"];
     }
-    
+
     //In other cases, we'll need to get the relevant part of the URL
     $current_url = get_server_url() . $_SERVER['REQUEST_URI'];
-    
+
     //Relevant URL part starts after the site URL
     $len = strlen($Config['SiteURL']);
-    
+
     //We need to assert it's the correct site
     if (substr($current_url, 0, $len) != $Config['SiteURL']) {
         dieprint_r(GENERAL_ERROR, "Edit includes/config.php and specify the correct site URL<br /><strong>Current value:</strong> $Config[SiteURL]<br /><strong>Expected value:</strong> a string starting by " . get_server_url(), "Setup");
     }
-    
-    if (array_key_exists('REDIRECT_URL', $_SERVER)) {
-        //With mod_rewrite, we can use REDIRECT_URL
-        //We takes the end of the URL, ie *FROM* $len position
-        return substr(get_server_url() . $_SERVER["REDIRECT_URL"], $len);
-    }
-    
-    //Last possibility: use REQUEST_URI, but remove QUERY_STRING
-    //If you need to edit here, use $_SERVER['REQUEST_URI']
-    //but you need to discard $_SERVER['QUERY_STRING']
-       
-    //We takes the end of the URL, ie *FROM* $len position
-    $url = substr(get_server_url() . $_SERVER["REQUEST_URI"], $len);
-    
-    //But if there are a query string (?action=... we need to discard it)	
+
+    //Last possibility: use REQUEST_URI or REDIRECT_URL, but remove QUERY_STRING
+    //TODO: handle the case of a nginx misconfiguration, where the query_string have been removed.
+    //      e.g. 'fastcgi_param  SCRIPT_FILENAME  $document_root/index.php;' will remove the QS.
+    //      (a working could be $document_root/index.php?$query_string);
+    $url = array_key_exists('REDIRECT_URL', $_SERVER) ? $_SERVER["REDIRECT_URL"] : $_SERVER["REQUEST_URI"];
+    $url = substr(get_server_url() . $url, $len);
     if ($_SERVER['QUERY_STRING']) {
         return substr($url, 0, strlen($url) - strlen($_SERVER['QUERY_STRING']) - 1);
     }
-    
     return $url;
 }
 
