@@ -121,6 +121,7 @@ class Document {
 		// Webserver hasn't been configured to send directly the query to
 		// $_SERVER["DOCUMENT_URI"]. This is the engine job instead.
                 $file = substr($_SERVER["DOCUMENT_URI"], 1); //Drops initial /
+		if ($file == self::get_entry_point_url()) return false;
 		if (file_exists($file)) {
 			$this->url = $file;
 			return true;
@@ -128,6 +129,15 @@ class Document {
 	}
 
         return false;
+    }
+
+    /**
+     * Gets the URL of the entry point script
+     */
+    static function get_entry_point_url () {
+        $backtrace = debug_backtrace();
+        $entry_point = array_pop($backtrace)['file'];
+        return substr($entry_point, strlen(getcwd()));
     }
 
     /**

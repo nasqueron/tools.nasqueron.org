@@ -19,7 +19,7 @@
   <!-- Included CSS Files (Compressed) -->
   <link rel="stylesheet" href="/stylesheets/foundation.min.css">
 
-  <script src="javascripts/modernizr.foundation.js"></script>
+  <script src="/javascripts/modernizr.foundation.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/stylesheets/general_foundicons.css">
   <link rel="stylesheet" href="/stylesheets/general_enclosed_foundicons.css">
