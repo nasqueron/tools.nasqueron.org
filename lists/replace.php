@@ -3,6 +3,7 @@ include('RegexpFactory.php');
 
 $result = '';
 $enable_join = array_key_exists('join', $_REQUEST) && $_REQUEST["join"] == 'on';
+$enable_split = array_key_exists('split', $_REQUEST) && $_REQUEST["split"] == 'on';
 
 if (array_key_exists('expression', $_REQUEST)) {
     if (array_key_exists('lists', $_REQUEST) && array_key_exists(0, $_REQUEST['lists']) && array_key_exists('replacement', $_REQUEST)) {
@@ -18,17 +19,33 @@ if (array_key_exists('expression', $_REQUEST)) {
             if ($enable_join) {
                 $result = join($_REQUEST["joinglue"], $items);
             }
+            if ($enable_split) {
+                $split_result = [];
+                foreach ($items as $item) {
+                    $split_result = array_merge($split_result, explode($_REQUEST["splitseparator"], $item));
+                }
+                $result = join("\n", $split_result);
+            }
         }
     }
     //If no list is given, or the replacement expression is blank, the result list is blank.
 }
 ?>
     <script>
+        /**
+         * Updates the form's widgets
+         */
         function updateUI () {
+            //Checks the join enable box when a glue string is provided
              if (document.getElementById("joinglue").value != "" && !document.getElementById("join").checked) {
-                 //Checks the enable box when a glue string is provided
                  document.getElementById("join").checked = true;
                  $("#join-checkbox .checkbox").addClass("checked");
+             }
+
+             //Checks the split enable box when a split seperator is provided
+             if (document.getElementById('splitseparator').value != "" && !document.getElementById("split").checked) {
+                document.getElementById("split").checked = true;
+                $("#split-checkbox .checkbox").addClass("checked");
              }
          }
     </script>
@@ -66,7 +83,17 @@ if (array_key_exists('expression', $_REQUEST)) {
         <div class="one mobile-one columns" style="text-align: center;">
             <span id="join-checkbox"><input type="checkbox" id="join" name="join" <?= $enable_join ? 'checked ' : '' ?>/><br /><label for="join">Enable</label></span>
         </div>
-
+    </div>
+    <div class="row collapse">
+        <div class="one mobile-one columns">
+            <span class="prefix">Split</span>
+        </div>
+        <div class="ten mobile-six columns">
+            <input name="splitseparator" id="splitseparator" type="text" placeholder="Separator text to split the list furthermore." value="<?= $_REQUEST['splitseparator'] ?>" onchange="updateUI();" />
+        </div>
+        <div class="one mobile-one columns" style="text-align: center;">
+            <span id="split-checkbox"><input type="checkbox" id="split" name="split" <?= $enable_split ? 'checked ' : '' ?>/><br /><label for="split">Enable</label></span>
+        </div>
     </div>
     <div class="row collapse">
         <div class="six columns">
