@@ -112,7 +112,6 @@ class ProjectsFeedIndex extends FeedIndex {
 $projectsIndex = new ProjectsFeedIndex();
 $usersIndex = new UsersFeedIndex();
 ?>
-    <!-- End Thumbnails -->
     <div class="four columns">
         <h2>Projects</h2>
 
@@ -163,3 +162,4 @@ $usersIndex = new UsersFeedIndex();
 	<?php $usersIndex->print_feeds(); ?>
         </ul>
     </div>
+    <!-- End Thumbnails -->
