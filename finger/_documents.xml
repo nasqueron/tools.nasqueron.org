@@ -1,0 +1,19 @@
+<documents topic="finger">
+	<document>
+		<article>index</article>
+		<title>Finger client</title>
+		<description>Gets identity, login, plan &amp; project information.</description>
+	</document>
+	<document>
+		<article>thimbl</article>
+		<title>Thimbl client</title>
+		<description>Prints the Thimbl feed from an user.</description>
+		<head><![CDATA[<style>
+	.block-grid li {
+		text-align: center;
+		margin-bottom: 0.75em;
+	}
+  </style>]]>
+</head>
+	</document>
+</documents>

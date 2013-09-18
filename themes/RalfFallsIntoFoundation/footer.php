@@ -12,7 +12,11 @@
         	<dl>
 			<dt>Gerrit</dt>
 			<dd><a href="/wikimedia/dev/feeds/">Activity feeds</a></dd>
-			<dd>RSS generator</dd>
+			<!--<dd>RSS generator</dd>-->
+
+			<dt>Finger</dt>
+			<dd><a href="/finger">Finger client</a></dd>
+			<dd><a href="/finger/thimbl">Thimbl client</a></dd>
         	</dl>
         </div>
         <div class="three columns">
