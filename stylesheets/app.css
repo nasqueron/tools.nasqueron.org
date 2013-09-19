@@ -161,7 +161,7 @@ footer .extrainfos strong {
 }
 
 .dark .row {
-	color: #7E827A;
+	color: #7E827A; 
 }
 
 .dark h2 {
@@ -170,10 +170,10 @@ footer .extrainfos strong {
 }
 
 .dark h3 {
-	color: #E3CDA4;
+	color: #E3CDA4; 
 }
 
-.dark h4, h5, h6 {
+.dark h4, .dark h5, .dark h6, .dark h4 abbr {
 	color: #7E827A;
 }
 
@@ -199,8 +199,16 @@ footer .extrainfos strong {
 	color: #2F343B;
 }
 
-footer.dark {
-	background-image: url(/images/RalfFallsIntoFoundation/footerborder.png);
+.dark form {
+        background-color: #2F343B;
+	background-image: url(/images/patterns/square_bg.png);
+
+	padding: 1.125em 1em 0.6em 1em;
+	border: solid 1px #111;
+}
+
+.dark form label {
+	color: #ddd;
 }
 
 /*  -------------------------------------------------------------
