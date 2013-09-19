@@ -17,6 +17,9 @@
 			<dt>Finger</dt>
 			<dd><a href="/finger">Finger client</a></dd>
 			<dd><a href="/finger/thimbl">Thimbl client</a></dd>
+
+			<dt>µblogging</dt>
+			<dd><a href="/microblogging/twitterpoints">Twitter Points</a></dd>
         	</dl>
         </div>
         <div class="three columns">
