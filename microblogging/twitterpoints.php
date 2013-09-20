@@ -61,11 +61,12 @@ if (isset($_REQUEST['username']) && $_REQUEST['username'] != '') {
 	$score = $stats[len_140] . " Twitter Point" . s($stats['len_140']);
 	echo "<h3>$score</h3>";
 	$s = s($stats['tweets']);
-	echo "<h4>Computed from the last $stats[tweets] tweet$s<br />";
+	echo "<h4>Computed from the last $stats[tweets] tweet$s</h4>";
 	$avg = $stats['total_length'] / $stats['tweets'];
 	$avg_rnd = round($avg);
+	$avg = round($avg, 5);
 	$s = s($avg);
-	echo "Average tweet length: <abbr title=\"$avg\">$avg_rnd</abbr> character$s</h4>";
+	echo "<h4 class=\"hide-for-touch\">Average tweet length: <abbr title=\"$avg\">$avg_rnd</abbr> character$s</h4><h4 class=\"show-for-touch\">Average tweet length: $avg character$s</h4>";
 
 	//RT
 	$url = 'http://twitter.com/intent/tweet?url=http://tools.dereckson.be/TP/' . $username . '&text=%23TP ' . $score . '%20%E2%80%94&related=dereckson,weneldur';

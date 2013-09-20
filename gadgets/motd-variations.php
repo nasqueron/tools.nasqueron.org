@@ -1,5 +1,5 @@
       <!-- Actions -->
-      <div id="action-icons"><a href="?" title="Refresh this page"><i class="general foundicon-refresh"></i></a></div>
+      <div id="action-icons"><a href="" title="Refresh this page"><i class="general foundicon-refresh"></i></a></div>
 
       <!-- Content -->
 <?php
