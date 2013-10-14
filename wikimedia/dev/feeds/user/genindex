@@ -38,7 +38,7 @@ namespace eval ::gravatar {
 	#rating: g pg r x
 	#We don't validate parameters, are API is unstable and evolves often.
 	proc get_url {mail {size 0} {default ""} {rating ""}} {
-		set url http://www.gravatar.com/avatar/
+		set url //www.gravatar.com/avatar/
 		append url [get_hash $mail]
 		set params {}
 		if {$size != 0} {

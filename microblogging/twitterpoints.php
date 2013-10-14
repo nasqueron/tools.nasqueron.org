@@ -54,7 +54,7 @@ if (isset($_REQUEST['username']) && $_REQUEST['username'] != '') {
 		if ($len == 140) { $stats['len_140']++; }
 	}
 	$name = $tweet->user->name;
-	$avatar = $tweet->user->profile_image_url;
+	$avatar = $tweet->user->profile_image_url_https;
 	echo '<div style="text-align: center;">';
 	echo "<h2>$name</h2>";
 	echo '<img src="', $avatar, '" alt="', $name, "'s", ' avatar" />';
@@ -69,7 +69,7 @@ if (isset($_REQUEST['username']) && $_REQUEST['username'] != '') {
 	echo "<h4 class=\"hide-for-touch\">Average tweet length: <abbr title=\"$avg\">$avg_rnd</abbr> character$s</h4><h4 class=\"show-for-touch\">Average tweet length: $avg character$s</h4>";
 
 	//RT
-	$url = 'http://twitter.com/intent/tweet?url=http://tools.dereckson.be/TP/' . $username . '&text=%23TP ' . $score . '%20%E2%80%94&related=dereckson,weneldur';
+	$url = 'https://twitter.com/intent/tweet?url=http://tools.dereckson.be/TP/' . $username . '&text=%23TP ' . $score . '%20%E2%80%94&related=dereckson,weneldur';
 	echo '<p>[ <a href="', $url, '" target="_blank"><i class="social foundicon-twitter"> Share score</i></a> ]</p>';
 
 	//Info
