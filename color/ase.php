@@ -4,10 +4,12 @@
  * Copyright (c) 2011 Chris Williams - http://www.colourlovers.com
  */
 
+//TODO: add code to read from http://blog.christenfeldt-edv.de/2010/04/03/adobe-swatch-exchange-ase-reader-in-php/
+
 /**
  * Manipulates an Adobe Swatch Exchange file
  */
-public class AdobeSwatchExchangeFile {
+class AdobeSwatchExchangeFile {
     /**
      * Writes palettes in ASE format
      *
