@@ -1,0 +1,7 @@
+<documents topic="forms">
+	<document>
+		<article>printpost</article>
+		<title>Prints a form</title>
+		<description>Gives this URL to an external tool to see the POST request's data.</description>
+	</document>
+</documents>
