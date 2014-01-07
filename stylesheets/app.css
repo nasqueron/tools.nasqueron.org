@@ -8,7 +8,7 @@
     Filename:       app.css
     Version:        1.0
     Created:        2013-01-16
-    Updated:        2013-01-16
+    Updated:        2014-01-05
     Licence:        Creative Commons BY 3.0
     -------------------------------------------------------------    */
 
@@ -88,6 +88,21 @@ header a {
 
 .accordion h4, .accordion h5, .accordion h6 {
 	color: black;
+}
+
+ul.menu {
+	display: block;
+	list-style-type: disc;
+	margin-before: 1em;
+	margin-after: 1em;
+	margin-start: 0;
+	margin-end: 0;
+	padding-start: 40px;
+	padding-left: 2em;
+}
+
+.menu li {
+	display: list-item;
 }
 
 /*  -------------------------------------------------------------
@@ -210,6 +225,28 @@ footer .extrainfos strong {
 .dark form label {
 	color: #ddd;
 }
+
+.dark table {
+	background: none repeat scroll 0% 0% rgb(0, 0, 0);
+	border: 1px solid rgb(34, 34, 34);
+}
+
+.dark table thead, .dark table tfoot {
+	background-color: #131313;
+}
+
+.dark table thead tr th, .dark table tfoot tr td {
+	color: white;
+}
+
+.dark table tbody tr td {
+	color: #7E827A;
+}
+
+.dark table tbody tr.even, table tbody tr.alt, .dark table tbody tr:nth-child(even) {
+	background-color: #0f0f0f;
+}
+
 
 /*  -------------------------------------------------------------
     Typography

@@ -1,6 +1,6 @@
 <img class="right" src="/images/commons/Wikimedia_Community_Logo.svg-120px.png">
 <h3>Tools available</h3>
-<ul>
+<ul class="menu">
 	<li><a href="/wikimedia/dev/feeds">Gerrit activity feeds</a></li>
 </ul>
 <h3>Next?</h3>

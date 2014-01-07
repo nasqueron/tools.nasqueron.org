@@ -10,9 +10,12 @@
         </div>
         <div class="three columns">
         	<dl>
-			<dt>Gerrit</dt>
-			<dd><a href="/wikimedia/dev/feeds/">Activity feeds</a></dd>
+			<dt>Wikimedia dev</dt>
+			<dd><a href="/wikimedia/dev/feeds/">Gerrit activity feeds</a></dd>
 			<!--<dd>RSS generator</dd>-->
+
+			<dt>Wikimedia Writing Tools</dt>
+			<dd><a href="/wikimedia/write/sourcetemplatesgenerator/">Source templates generator</a></dd>
 
 			<dt>Finger</dt>
 			<dd><a href="/finger">Finger client</a></dd>
