@@ -12,6 +12,6 @@ $palettes = [
     ]
 ];
 
-require('/home/dereckson.be/tools.dereckson.be/color/ase.php');
+require('ase.php');
 $content = AdobeSwatchExchangeFile::getASEContent($palettes);
 file_put_contents("/tmp/nikebox.ase", $content);
