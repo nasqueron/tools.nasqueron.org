@@ -10,7 +10,7 @@
 	//Helper functions
 	function get_description ($item) {
 		$post = file_get_contents($item['link']);
-		$data = string_between($post, "<div class='post-body entry-content'>", "</table>");
+		$data = string_between($post, '<div class="entry_content">', "</table>");
 		$data = string_between($data, "<img ", "/>", true, true);
 		return $data ? "<p>$item[summary]</p><p>$data</p>" : $item['summary'];
 	}
