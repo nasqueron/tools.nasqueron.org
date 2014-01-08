@@ -1,0 +1,12 @@
+<documents topic="css">
+	<document>
+		<article>index</article>
+		<title>CSS tools</title>
+		<description>Tools to build CSS.</description>
+	</document>
+	<document>
+		<article>media-queries-generator</article>
+		<title>Media queries generator</title>
+		<description>Generates media queries CSS (width-based) from a list of sizes.</description>
+	</document>
+</documents>

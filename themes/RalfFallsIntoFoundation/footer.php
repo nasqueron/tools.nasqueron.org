@@ -27,8 +27,8 @@
         </div>
         <div class="three columns">
         	<dl>
-			<dt>Network</dt>
-			<dd><a href="/network/mx">MX</a></dd>
+			<dt>CSS</dt>
+			<dd><a href="/css/media-queries-generator">Media queries generator</a></dd>
 
 			<dt>Lists</dt>
 			<dd><a href="/lists/operations">Lists operations</a></dd>
@@ -44,6 +44,9 @@
 			<dt>Gadgets</dt>
 			<dd><a href="/gadgets/motd-variations">MOTD in Jive <span class="ampersand">&</span> Valspeak</a></dd>
 			<dd><a href="/gadgets/text-variations">Letters variation</a></dd>
+
+			<dt>Network</dt>
+			<dd><a href="/network/mx">MX</a></dd>
 
 			<dt>Start pages</dt>
 			<dd><a href="/lex">Lex</a></dd>
