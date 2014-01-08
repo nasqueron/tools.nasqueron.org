@@ -72,7 +72,7 @@
                     css += "@media screen and (min-width: " + (parseInt(widths[i-1]) + 1) + "px) and (max-width: " + widths[i] + "px) {";
                 }
                 css += '\n';
-                css += Indent(cssContent.replace('%width%', widths[i]), indentAmout, useSpaceForIndent);
+                css += Indent(cssContent.replace(/%width%/g, widths[i]), indentAmout, useSpaceForIndent);
                 css += '\n}';
                 if (i < widths.length - 1) {
                     css += '\n\n';
