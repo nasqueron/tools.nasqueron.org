@@ -144,6 +144,14 @@ footer a:active {
 	color: #A35636;
 }
 
+footer .site-description {
+    text-align: center;
+}
+
+footer .site-description p {
+    font-size: 14px;
+}
+
 footer dl {
 	font-variant: small-caps;
 }

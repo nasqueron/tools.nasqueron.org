@@ -4,9 +4,11 @@
   <footer><div class="row">
   <div class="twelve columns"><hr />
       <div class="row">
-        <div class="three columns">
-          <p>This site is a repository of tools.</p>
-          <p>This is also an experiment to create a site based on Pluton, Foundation, Git <span class="ampersand">&</span> Nasqueron.</p>
+        <div class="three columns site-description">
+           <p><img src="/images/Nasqueron.png" width="80px" /></p>
+           <p><strong>Nasqueron</strong> is a community of developers <span class="ampersand">&</span> creative people.</p>
+           <hr />
+           <p><strong>Nasqueron Tools</strong> is a collection of small utilities, gadgets <span class="ampersand">&</span> scripts to perform daily tasks.</p>
         </div>
         <div class="three columns">
         	<dl>
@@ -56,19 +58,20 @@
   </div>
   <div class="twelve columns"><hr />
       <div class="row extrainfos">
-           <div class="six columns">
-               <p><i class="general foundicon-settings"></i> <strong>Options:</strong> <a href="javascript:SetUITonality('dark');">dark mode</a> | <a href="javascript:SetUITonality('light');">light mode</a></p>
-           </div>
+        <div class="six columns">
+            <p><i class="general foundicon-settings"></i> <strong>Options:</strong> <a href="javascript:SetUITonality('dark');">dark mode</a> | <a href="javascript:SetUITonality('light');">light mode</a></p>
+        </div>
+        <div class="six columns">
+            <p class="right"><i class="general foundicon-flag"></i> <strong>Git revision:</strong> <?= substr(`git rev-parse HEAD`, 0, 7) ?> | <strong>Version:</strong> alpha preview</p>
+        </div>
       </div>
       <div class="row extrainfos">
         <div class="six columns">
             <p><i class="general foundicon-globe"></i> <strong>Crafted by</strong> <a href="http://www.dereckson.be/">Dereckson</a> | <strong>Powered by</strong> <a href="http://keruald.sf.net">Keruald/Pluton</a> <span class="ampersand">&</span> <a href="http://foundation.zurb.com/">Foundation</a>.</p>
         </div>
-
         <div class="six columns">
-            <p class="right"><i class="general foundicon-flag"></i> <strong>Git revision:</strong> <?= substr(`git rev-parse HEAD`, 0, 7) ?> | <strong>Version:</strong> alpha preview</p>
-        </div>
-
+            <p class="right">“For water, though supposedly incompressible, is not entirely so.”</p>
+         </div>
       </div>
   </div>
   </div></footer>
