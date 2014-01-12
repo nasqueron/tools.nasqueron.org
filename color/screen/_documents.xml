@@ -3,7 +3,7 @@
 
 	You can configure your web server to bypass Pluton for these. If you don't, Pluton will know not to print header/footer.
 -->
-<documents topic="color">
+<documents topic="color-screen">
 	<document>
 		<article>index</article>
 		<title>Screen color</title>
