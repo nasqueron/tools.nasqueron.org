@@ -43,7 +43,7 @@
     </div>
     <div class="row">
        <div class="twelve columns">
-           <p><strong>Note:</strong> Use <strong>%width%</strong> in your CSS to generate code to substitude the current breakpoing width.</p>
+           <p><strong>Note:</strong> Use <strong>%width%</strong> in your CSS to generate code to substitude the current breakpoint width.</p>
        </div>
     </div>
     </form>
