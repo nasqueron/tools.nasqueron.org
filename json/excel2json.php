@@ -71,7 +71,7 @@ if ($data !== '') {
 <form method="post">
     <h2>Source</h2>
     <div class="row"><div class="twelve columns">
-          <label for="data">Paste cells from your spreadsheet application or introduces tab separated values:</label>
+          <label for="data">Paste cells from your spreadsheet application or write tab separated values:</label>
     </div></div>
     <div class="row"><div class="twelve columns">
         <textarea id="data" name="data" rows="8"><?= $data ?></textarea>
@@ -84,3 +84,31 @@ if ($data !== '') {
         <input type="submit" rows="8" value="Convert" class="button" />
     </div></div>
 </form>
+
+<!-- Allows to use tab in textarea fields -->
+<script>
+function enableTab (id) {
+    document.getElementById(id).onkeydown = function(e) {
+        if (e.keyCode === 9) { // tab was pressed
+            var start = this.selectionStart,
+                end = this.selectionEnd;
+
+            this.value = this.value.substring(0, start)
+                       + '\t'
+                       + this.value.substring(end);
+            this.selectionStart = this.selectionEnd = ++start;
+
+            return false;
+        }
+
+        return true;
+    };
+}
+
+enableTab('data');
+<?php
+if ($data !== '') {
+    echo "enableTab('result');\n";
+}
+?>
+</script>
