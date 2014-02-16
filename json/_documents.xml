@@ -1,0 +1,7 @@
+<documents topic="json">
+	<document>
+		<article>excel2json</article>
+		<title>Excel to JSON converter</title>
+		<description>Converts an Excel sheet or a tab-separated file into a JSON document.</description>
+	</document>
+</documents>
