@@ -38,7 +38,6 @@ class JsonComposer {
                 for ($i = $countProperties ; $i < $delta + $countProperties ; $i ++) {
                     $rowProperties[] = "property$i";
                 }
-
             }
             $dataArray[] = array_combine($rowProperties, $row);
         }
