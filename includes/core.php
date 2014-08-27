@@ -25,7 +25,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 //Load libraries
 include_once("config.php");               //Site config
 include_once("error.php");               //Error management
-include_once("mysql.php");              //MySQL layer
+include_once("mysqli.php");             //MySQL layer
 include_once("session.php");           //Sessions handler
 
 ////////////////////////////////////////////////////////////////////////////////
