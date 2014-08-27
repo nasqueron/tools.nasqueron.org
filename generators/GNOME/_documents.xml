@@ -1,0 +1,10 @@
+<documents topic="generators-GNOME">
+	<document>
+		<article>desktop-file</article>
+		<title>GNOME .desktop file generator</title>
+		<description>Generates a Freedesktop/GNOME .desktop file.</description>
+        <footer><![CDATA[
+  <script src="/generators/GNOME/desktop-file.js"></script>
+        ]]></footer>
+	</document>
+</documents>

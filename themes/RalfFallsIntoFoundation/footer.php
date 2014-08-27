@@ -46,6 +46,9 @@
         </div>
         <div class="three columns">
         	<dl>
+			<dt>Generatorss</dt>
+			<dd><a href="/generators/GNOME/desktop-file">GNOME .desktop file generator</dd>
+
 			<dt>Gadgets</dt>
 			<dd><a href="/gadgets/motd-variations">MOTD in Jive <span class="ampersand">&</span> Valspeak</a></dd>
 			<dd><a href="/gadgets/text-variations">Letters variation</a></dd>
