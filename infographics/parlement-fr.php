@@ -1,4 +1,5 @@
 <?php
+die("Script disabled for performance issue. You'll find a PNG and SVG representation <strong><a href=\"https://commons.wikimedia.org/wiki/File:Distribution_des_s%C3%A9nateurs_fran%C3%A7ais_par_ann%C3%A9e_de_naissance_-_2013.svg\">here on Wikimedia Commons</a></strong>.");
 require_once('datasources/pol.fr.senat.php');
 require_once('datasources/pol.fr.assembleenationale.php');
 
