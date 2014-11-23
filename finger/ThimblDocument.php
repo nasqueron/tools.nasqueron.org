@@ -38,6 +38,8 @@ END;
 
     /**
      * Gets a new instance of the ThimblDocument object from a JSON string
+     *
+     * @return ThimblDocument|null
      */
     public static function FromJSON ($string) {
         self::ApplyCleanKludge($string);
