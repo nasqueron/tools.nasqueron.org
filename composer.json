@@ -1,0 +1,25 @@
+{
+    "name": "nasqueron/tools",
+    "description": "Small utilities, gadgets & scripts to perform daily tasks.",
+    "type": "project",
+    "keywords": [
+        "tools"
+    ],
+    "homepage": "http://tools.nasqueron.org/",
+    "license": "BSD-2-Clause",
+    "authors": [{
+        "name": "Sébastien Santoro aka Dereckson",
+        "email": "dereckson@espace-win.org",
+        "homepage": "http://www.dereckson.be/",
+        "role": "Crafter"
+    }],
+    "require": {
+        "php": ">=5.4",
+        "dereckson/source-templates-generator": "dev-master"
+    },
+	"support": {
+        "issues": "http://devcentral.nasqueron.org/tag/nasqueron_tools/",
+		"irc": "irc://irc.freenode.net/nasqueron",
+        "source": "https://github.com/nasqueron/tools.nasqueron.org/"
+    }
+}

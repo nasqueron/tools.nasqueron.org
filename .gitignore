@@ -6,3 +6,10 @@ images/commons
 wikimedia/dev/feeds/project/*.xml
 wikimedia/dev/feeds/user/*.xml
 wikimedia/dev/feeds/user/index.tmp
+
+# Tools maintained as external packages
+wikimedia/write/sourcetemplatesgenerator/
+
+# Composer
+vendor
+composer.lock
