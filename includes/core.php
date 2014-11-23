@@ -41,7 +41,7 @@ include_once("session.php");           //Sessions handler
  */
 function get_username ($user_id) {
 	global $db;
-    
+
 	$user_id = $db->sql_escape($user_id);
     $sql = 'SELECT username FROM '. TABLE_USERS . " WHERE user_id = '$userid'";
 	return $db->sql_query_express($sql, "Can't get username from specified user id");
@@ -49,12 +49,12 @@ function get_username ($user_id) {
 
 /*
  * Gets the user id matching specified username
- * @param string $username the username 
+ * @param string $username the username
  * @return string the user ID
  */
 function get_userid ($username) {
 	global $db;
-    
+
 	$username = $db->sql_escape($username);
 	$sql = 'SELECT user_id FROM '. TABLE_USERS . " WHERE username LIKE '$username'";
     return $db->sql_query_express($sql, "Can't get user id from specified username");
@@ -91,10 +91,10 @@ function dprint_r ($mixed) {
  * Generates a new GUID
  * @return string a guid (without {})
  */
-function new_guid () {  
+function new_guid () {
 	//The guid chars
     $chars = explode(',', 'a,b,c,d,e,f,0,1,2,3,4,5,6,7,8,9');
-    
+
     //Let's build our 36 characters string
     //e.g. 68ed40c6-f5bb-4a4a-8659-3adf23536b75
 	$guid = "";
@@ -119,7 +119,7 @@ function is_guid ($expression) {
     //We avoid regexp to speed up the check
     //A guid is a 36 characters string
     if (strlen($expression) != 36) return false;
-    
+
     $expression = strtolower($expression);
 	for ($i = 0 ; $i < 36 ; $i++) {
 		if ($i == 8 || $i == 13 || $i == 18 || $i == 23) {
@@ -224,10 +224,10 @@ function get_server_url () {
 	switch ($port = $_SERVER['SERVER_PORT']) {
 		case '80':
             return "http://$_SERVER[SERVER_NAME]";
-        
+
         case '443':
             return "https://$_SERVER[SERVER_NAME]";
-        
+
         default:
             return "http://$_SERVER[SERVER_NAME]:$_SERVER[SERVER_PORT]";
 	}
@@ -307,7 +307,7 @@ function get_url_for () {
  */
 function get_xhr_hash ($args) {
     global $Config;
-    
+
     array_shift($args);
     return md5($_SESSION['ID'] . $Config['SecretKey'] . implode('', $args));
 }
@@ -316,9 +316,9 @@ function get_xhr_hash ($args) {
  * Gets the URL to call do.php, the xmlHttpRequest controller
  * @return string the xmlHttpRequest url, with an integrity hash
  */
-function get_xhr_hashed_url () {   
+function get_xhr_hashed_url () {
     global $Config;
-    
+
     $args = func_get_args();
     $args[] = get_xhr_hash($args);
     return $Config['DoURL'] . '/' . implode('/', $args);
@@ -330,7 +330,7 @@ function get_xhr_hashed_url () {
  */
 function get_xhr_url () {
     global $Config;
-    
+
     $args = func_get_args();
     return $Config['DoURL'] . '/' .implode('/', $args);
 }
