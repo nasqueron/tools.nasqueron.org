@@ -3,4 +3,5 @@
 <ul class="menu">
 	<li><a href="/wikimedia/write/sourcetemplatesgenerator">Source templates generator</a></li>
 	<li><a href="/wikimedia/write/translate">Translate helper tools</a></li>
+    <li><a href="/wikimedia/write/wikidataitems">Gets Wikidata items from an article links</a></li>
 </ul>

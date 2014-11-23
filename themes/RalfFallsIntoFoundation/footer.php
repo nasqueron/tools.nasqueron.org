@@ -18,6 +18,7 @@
 
 			<dt>Wikimedia Writing Tools</dt>
 			<dd><a href="/wikimedia/write/sourcetemplatesgenerator/">Source templates generator</a></dd>
+			<dd><a href="/wikimedia/write/wikidataitems/">Wikidata items</a></dd>
 
 			<dt>Finger</dt>
 			<dd><a href="/finger">Finger client</a></dd>

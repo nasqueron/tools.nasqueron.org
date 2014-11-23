@@ -1,0 +1,7 @@
+<documents topic="wikimedia-write-wikidataitems">
+	<document>
+		<article>index</article>
+		<title>Wikidata items</title>
+		<description>Gets a list of Wikidata items from the internal links of a Wikipedia article.</description>
+	</document>
+</documents>
