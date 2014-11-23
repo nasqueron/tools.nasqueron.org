@@ -18,7 +18,7 @@ class SenateursFrance extends FrWikipediaDataSource {
 	/**
  	 * Gets the list of senators
 	 *
-	 * @return Array The list of senators, each item an array with URL, name and born properties.
+	 * @return array The list of senators, each item an array with URL, name and born properties.
 	 */
 	public function get_senateurs () {
 		$data = string_between($this->source_data, '<table class="wikitable alternance sortable">', '</table>', true, true);

@@ -85,7 +85,7 @@ class MediaWikiDataSource extends DataSource {
 	 * Gets categories, from cache or API.
 	 *
 	 * @param $bypassCache If true, bypass the cache; otherwise, use the cached result if available.
-	 * @return Array an single dimension array, each row a category, including Category: prefix.
+	 * @return array an single dimension array, each row a category, including Category: prefix.
 	 */
 	public function get_categories ($bypassCache = false) {
 		if ($this->source_mode != 'wiki') {

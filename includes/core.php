@@ -302,7 +302,7 @@ function get_url_for () {
 
 /*
  * Gets an hash value to check the integrity of URLs in /do.php calls
- * @param Array $args the args to compute the hash
+ * @param array $args the args to compute the hash
  * @return the hash paramater for your xmlHttpRequest url
  */
 function get_xhr_hash ($args) {

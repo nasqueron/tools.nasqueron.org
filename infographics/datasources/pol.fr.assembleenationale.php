@@ -18,7 +18,7 @@ class AssembleeNationale extends FrWikipediaDataSource {
 	/**
  	 * Gets the list of reprensentatives
 	 *
-	 * @return Array The list of representatives, each item an array with URL, name and born properties.
+	 * @return array The list of representatives, each item an array with URL, name and born properties.
 	 */
 	public function get_members () {
 		$data = string_between($this->source_data, '<table class="wikitable sortable">', '</table>', true, true);

@@ -24,7 +24,7 @@ class FingerClient {
 
     /**
      * The finger structured result
-     * @var Array
+     * @var array
      */
     public $structuredResult;
 
@@ -42,7 +42,7 @@ class FingerClient {
 
     /**
      * Blacklist of blocked hosts, where you can't finger
-     * @var Array
+     * @var array
      */
     private $blockedHosts = [];
 
@@ -217,7 +217,7 @@ class FingerClient {
     /**
      * Adds the specified hosts into the blacklist
      *
-     * @param Array the list of hosts to add to the blacklist
+     * @param array the list of hosts to add to the blacklist
      */
     public function AddToBlacklist ($blockedHosts) {
         $this->blockedHosts = array_merge($this->blockedHosts, $blockedHosts);

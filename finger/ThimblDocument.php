@@ -68,7 +68,7 @@ END;
     /**
      * Gets the properties
      *
-     * @return Array An array with the properties
+     * @return array An array with the properties
      */
     public function GetProperties () {
         return (array)$this->data->properties;
@@ -91,7 +91,7 @@ END;
     /**
      * Gets the messages
      *
-     * @return Array An array with the messages
+     * @return array An array with the messages
      */
     public function GetMessages () {
         $messages = array();
@@ -106,7 +106,7 @@ END;
      *
      * @param int $avatarSize The avatar width
      * @param string $avatarFallbackStyle The avatar fallback Gravatar style ('mm', 'blank', '404', 'identicon', 'wavatar', 'retro')
-     * @return Array An array with the followed people
+     * @return array An array with the followed people
      */
     public function GetFollowing ($avatarSize = 80, $avatarFallbackStyle = 'mm') {
         $following = array();
