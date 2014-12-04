@@ -87,5 +87,3 @@ class Cache {
         return call_user_func(array($engine_class, 'load'));
     }
 }
-
-?>

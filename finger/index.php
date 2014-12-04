@@ -26,4 +26,3 @@ if (isset($client) && $client->rawResult) {
     echo "<h2>Finger $_REQUEST[user]</h2>";
     echo '<pre id="finger">', $client->rawResult, '</pre>';
 }
-?>

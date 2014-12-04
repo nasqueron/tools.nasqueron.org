@@ -77,5 +77,3 @@ if (isset($_REQUEST['username']) && $_REQUEST['username'] != '') {
 	echo '</div>';
 	echo '<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>';
 }}
-
-?>

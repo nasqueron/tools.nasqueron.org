@@ -33,4 +33,3 @@ if ($_POST['LogIn']) {
     //User have submitted logout form or clicked a logout link
     Session::load()->user_logout();
 }
-?>

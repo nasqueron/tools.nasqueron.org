@@ -49,4 +49,3 @@ if ($mail) {
 		echo "<h3>Improve this tool</h3><p>This code is open source, you can improve it. Fork it and add JS validation mail code. If the mail is wrong, apply the class .error to the input box.</p>";
 	}
 }
-?>

@@ -78,4 +78,3 @@ class CacheVoid {
      */
     function delete ($key) { }
 }
-?>

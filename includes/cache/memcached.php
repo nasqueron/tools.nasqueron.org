@@ -109,4 +109,3 @@ class CacheMemcached {
         return $this->memcached->delete($key);
     }
 }
-?>

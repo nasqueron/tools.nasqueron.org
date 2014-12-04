@@ -8,4 +8,3 @@
 	$pos2 = strpos($content, '</body>');
         $content = str_replace('<h2>', '<h3>', $content);
 	echo substr($content, $pos1, $pos2 - $pos1);
-?>

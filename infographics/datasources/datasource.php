@@ -5,5 +5,3 @@
  */
 class DataSource {
 }
-
-?>

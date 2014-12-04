@@ -107,4 +107,3 @@ class RegexpFactory {
         return $errors[preg_last_error()];
     }
 }
-?>
