@@ -8,7 +8,7 @@ wikimedia/dev/feeds/user/*.xml
 wikimedia/dev/feeds/user/index.tmp
 
 # Tools maintained as external packages
-wikimedia/write/sourcetemplatesgenerator/
+wikimedia/write/sourcetemplatesgenerator
 
 # Composer
 vendor
