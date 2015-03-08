@@ -1,0 +1,7 @@
+<documents topic="geocaching">
+	<document>
+		<article>string2number</article>
+		<title>Numeric operations from strings</title>
+		<description>Gets numbers from strings content.</description>
+	</document>
+</documents>

@@ -53,6 +53,9 @@
 			<dd><a href="/gadgets/motd-variations">MOTD in Jive <span class="ampersand">&</span> Valspeak</a></dd>
 			<dd><a href="/gadgets/text-variations">Letters variation</a></dd>
 
+            <dt>Geocaching</dt>
+            <dd><a href="/geocaching/string2number">String to number</a></dd>
+
 			<dt>Network</dt>
 			<dd><a href="/network/mx">MX</a></dd>
 

@@ -1,0 +1,62 @@
+  <div class="row">
+    <form name="string2number" class="custom">
+    <div class="row collapse">
+        <div class="one mobile-one columns">
+            <span class="prefix">Text</span>
+        </div>
+        <div class="ten mobile-six columns">
+            <input
+                   name="sourceString" id="sourceString" type="text"
+                   placeholder="The source string you want to process"
+                   onChange="StringToNumber.process();"
+            />
+                    </div>
+        <div class="one mobile-one columns">
+            <input type="button" class="button expand postfix" value="OK" 
+                   onClick="StringToNumber.process();" />
+        </div>
+    </div>
+    <h3>Simple substitution, addition</h3>
+    <p>This method is used in <a href="http://www.geocaching.com/geocache/GC5B9R8_charleroi-pub-crawl-directors-cut">
+GC5B9R8</a> for example.</p>
+    <div class="row collapse">
+        <div class="one mobile-one columns">
+            <span class="prefix">Number</span>
+        </div>
+        <div class="eleven mobile-seven columns">
+            <input name="targetNumber" id="targetNumber" type="text" readonly />
+        </div>
+    </div>
+    </form>
+  </div>
+
+  <!-- JavaScript code for string2number tool -->
+  <script>
+SimpleSubstitution = {
+    getNumber: function (letter) {
+        //TODO: handle accentuated letters
+        var number = letter.toUpperCase().charCodeAt(0) - 64;
+        if (number < 0 || number > 26) {
+            //TODO: consider to throw exception if argument isn't a letter
+            //      but what about expected void chars, like spaces?
+            return 0;
+        }
+        return number;
+    },
+
+    getSum: function (text) {
+        sum = 0;
+        for (var i = 0, len = text.length; i < len; i++) {
+            sum += this.getNumber(text[i]);
+        }
+        return sum;
+    }
+}
+
+StringToNumber = {
+    process: function () {
+        var sourceString = document.getElementById("sourceString").value;
+        document.getElementById("targetNumber").value = SimpleSubstitution.getSum(sourceString);
+    },
+}
+  </script>
