@@ -69,7 +69,7 @@ if (isset($_REQUEST['username']) && $_REQUEST['username'] != '') {
 	echo "<h4 class=\"hide-for-touch\">Average tweet length: <abbr title=\"$avg\">$avg_rnd</abbr> character$s</h4><h4 class=\"show-for-touch\">Average tweet length: $avg character$s</h4>";
 
 	//RT
-	$url = 'https://twitter.com/intent/tweet?url=http://tools.dereckson.be/TP/' . $username . '&text=%23TP ' . $score . '%20%E2%80%94&related=dereckson,weneldur';
+	$url = 'https://twitter.com/intent/tweet?url=' . get_server_url() . '/TP/' . $username . '&text=%23TP ' . $score . '%20%E2%80%94&related=dereckson,weneldur';
 	echo '<p>[ <a href="', $url, '" target="_blank"><i class="social foundicon-twitter"> Share score</i></a> ]</p>';
 
 	//Info
