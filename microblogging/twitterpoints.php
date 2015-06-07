@@ -35,7 +35,7 @@ if (isset($_REQUEST['username']) && $_REQUEST['username'] != '') {
 		} elseif (isset($response->error)) {
 			$errorMessage = "<p>$response->error</p>";
 		}
-	}        
+	}
 
 	if ($errorMessage !== '') {
 		echo "<h2>Can't compute stats.</h2>$errorMessage";
