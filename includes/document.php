@@ -99,6 +99,18 @@ class Document {
             return true;
         }
 
+        //Application known extensions
+        $extension = get_extension($this->url);
+        if ($extension == "query") {
+            $file = $this->url . ".php";
+            if (file_exists($file)) {
+                $this->url = $file;
+                $this->noheader = true;
+                $this->nofooter = true;
+                return true;
+            }
+        }
+
         //Tries other extensions
         $extensions_to_try = array('html', 'php');
         $pathinfo = pathinfo($this->url);

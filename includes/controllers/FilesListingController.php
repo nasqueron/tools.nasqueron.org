@@ -56,6 +56,7 @@ class FilesListingController {
 	 * Outputs the result
 	 */
 	public function show () {
+		header("Content-Type: application/json");
 		echo json_encode($this->result);
 	}
 }
