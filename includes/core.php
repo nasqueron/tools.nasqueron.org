@@ -139,8 +139,7 @@ function is_guid ($expression) {
  * @param string $file the file to get the extension
  */
 function get_extension ($file) {
-    $dotPosition = strrpos($file, ".");
-    return substr($file, $dotPosition + 1);
+    return pathinfo($file, PATHINFO_EXTENSION);
 }
 
 /**
