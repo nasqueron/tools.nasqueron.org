@@ -141,6 +141,27 @@ function is_guid ($expression) {
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
+ * Gets files in a directory
+ *
+ * @param string $dir The directory files are located (optional, by default the current directory)
+ * @param string $extension The extension to lookup without initial dot (optional, return every file if omitted)
+ * @return array the files in the specified directory optionally filtered by extension
+ */
+function get_files ($dir = '.', $extension = NULL) {
+    $handle = opendir($dir);
+    $files = [];
+    while ($file = readdir($handle)) {
+        if ($file == '.' || $file == '..' || is_dir($file)) {
+            continue;
+        }
+        if ($extension === NULL || get_extension($file) == $extension) {
+            $files[] = $file;
+        }
+    }
+    return $files;
+}
+
+/**
  * Gets file extension
  *
  * @param string $file the file to get the extension
