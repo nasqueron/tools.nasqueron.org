@@ -134,13 +134,26 @@ function is_guid ($expression) {
     return true;
 }
 
-/*
+////////////////////////////////////////////////////////////////////////////////
+///                                                                          ///
+/// Files, extensions and directories                                        ///
+///                                                                          ///
+////////////////////////////////////////////////////////////////////////////////
+
+/**
  * Gets file extension
+ *
  * @param string $file the file to get the extension
  */
 function get_extension ($file) {
     return pathinfo($file, PATHINFO_EXTENSION);
 }
+
+////////////////////////////////////////////////////////////////////////////////
+///                                                                          ///
+/// Strings manipulation                                                     ///
+///                                                                          ///
+////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Determines if a string starts with specified substring
