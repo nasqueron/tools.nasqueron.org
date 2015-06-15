@@ -328,6 +328,21 @@ function get_url_for () {
     return $url;
 }
 
+/**
+ * Gets directory relative to the site root
+ *
+ * @param string $dir the absolute path
+ * @return string the relative directory to the site root
+ */
+function get_directory ($dir) {
+    $rootPath = dirname(__DIR__);
+    $rootPathLen = strlen($rootPath);
+    if (substr($dir, 0, $rootPathLen) != $rootPath) {
+        throw new InvalidArgumentException("Directory $dir doesn't start by root directory $rootPath.");
+    }
+    return substr($dir, ++$rootPathLen);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 ///                                                                          ///
 /// URL xmlHttpRequest helpers functions                                     ///
