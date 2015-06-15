@@ -100,33 +100,33 @@ class Document {
         }
 
         //Tries other extensions
-	$extensions_to_try = array('html', 'php');
-	$pathinfo = pathinfo($this->url);
-	foreach ($extensions_to_try as $ext) {
-		$file = "$pathinfo[dirname]/$pathinfo[filename].$ext";
-		if (file_exists($file)) {
-			$this->url = $file;
-			return true;
-		}
-	}
-
-        //Handles homepages
-	if ($this->is_homepage($this->url)) {
-		$this->url = "_index/index.html";
-		return true;
+        $extensions_to_try = array('html', 'php');
+        $pathinfo = pathinfo($this->url);
+        foreach ($extensions_to_try as $ext) {
+            $file = "$pathinfo[dirname]/$pathinfo[filename].$ext";
+            if (file_exists($file)) {
+                $this->url = $file;
+                return true;
+            }
         }
 
-	//Fixes common problems
-	if (!string_starts_with($_SERVER["REQUEST_URI"], $_SERVER["DOCUMENT_URI"])) {
-		// Webserver hasn't been configured to send directly the query to
-		// $_SERVER["DOCUMENT_URI"]. This is the engine job instead.
-                $file = substr($_SERVER["DOCUMENT_URI"], 1); //Drops initial /
-		if ($file == self::get_entry_point_url()) return false;
-		if (file_exists($file)) {
-			$this->url = $file;
-			return true;
-		}
-	}
+        //Handles homepages
+        if ($this->is_homepage($this->url)) {
+            $this->url = "_index/index.html";
+            return true;
+        }
+
+        //Fixes common problems
+        if (!string_starts_with($_SERVER["REQUEST_URI"], $_SERVER["DOCUMENT_URI"])) {
+            // Webserver hasn't been configured to send directly the query to
+            // $_SERVER["DOCUMENT_URI"]. This is the engine job instead.
+            $file = substr($_SERVER["DOCUMENT_URI"], 1); //Drops initial /
+            if ($file == self::get_entry_point_url()) return false;
+            if (file_exists($file)) {
+                $this->url = $file;
+                return true;
+            }
+        }
 
         return false;
     }
@@ -237,11 +237,11 @@ class Document {
      * Gets footer file (_footer.php) path in the current or parent directories
      *
      * @return string the path to the current footer if found ; otherwise, null. (or null if no footer is found)
-     */ 
+     */
     public function get_footer () {
         $dirs = explode('-', $this->topic);
-	for ($i = count($dirs) ; $i > 0 ; $i--) {
-	    $footer = join($dirs, '/') . '/_footer.php';
+        for ($i = count($dirs) ; $i > 0 ; $i--) {
+            $footer = join($dirs, '/') . '/_footer.php';
             if (file_exists($footer)) {
                 return $footer;
             }
@@ -254,28 +254,28 @@ class Document {
      * Prints the document body
      */
     public function render_body () {
-	global $db, $Config, $Session, $CurrentUser;
-	$document = $this;
+        global $db, $Config, $Session, $CurrentUser;
+        $document = $this;
 
         //404 header
         if ($this->status == 404) {
             header("Status: 404 Not Found");
         }
 
-	//Header content
+        //Header content
         if (!$this->noheader) {
-  	    $header = $this->get_directory() . '/_header.php';
-	    if (file_exists($header)) {
-		include($header);
-	    }
+            $header = $this->get_directory() . '/_header.php';
+            if (file_exists($header)) {
+                include($header);
+            }
         }
 
         //Includes file
         switch ($this->extension) {
             case 'txt':
-		echo "<pre>";
-		include($this->url);
-		echo "</pre>";
+                echo "<pre>";
+                include($this->url);
+                echo "</pre>";
                 break;
 
             case 'png':
@@ -290,10 +290,10 @@ class Document {
                 include($this->url);
         }
 
-	//Footer
-	if (!$nofooter && $footer = $this->get_footer()) {
+        //Footer
+        if (!$nofooter && $footer = $this->get_footer()) {
             include($footer);
-	}
+        }
     }
 
     /**
@@ -307,11 +307,11 @@ class Document {
      */
     function render () {
         //Global variables for the header and the footer
-	global $db, $Config, $Session, $CurrentUser;
-	$document = $this;
+        global $db, $Config, $Session, $CurrentUser;
+        $document = $this;
 
-	//HTML output
-	$theme = $Config['Theme'];
+        //HTML output
+        $theme = $Config['Theme'];
         if (!$this->noheader) include("themes/$theme/header.php");
         $this->render_body();
         if (!$this->nofooter) include("themes/$theme/footer.php");
@@ -321,11 +321,11 @@ class Document {
      * Gets the document description
      */
     function get_description () {
-	if ($this->status == 404) {
-		$this->title = "404 Not Found";
-		$this->description = "The requested resource hasn't been found.";
-		return;
-	}
+        if ($this->status == 404) {
+            $this->title = "404 Not Found";
+            $this->description = "The requested resource hasn't been found.";
+            return;
+        }
 
         if ($description = self::get_description_from_documentsXml($this->topic, $this->article)) {
             $variables = [ 'title', 'description', 'head', 'footer' ];
@@ -338,7 +338,7 @@ class Document {
             $shortTags = [ 'noheader', 'nofooter' ];
             foreach ($shortTags as $shortTag) {
                 if (isset($description->$shortTag)) {
-		     $this->$shortTag = true;
+             $this->$shortTag = true;
                 }
             }
         }
@@ -349,7 +349,7 @@ class Document {
         if (file_exists($topicDocuments)) {
             $xml = simplexml_load_file($topicDocuments, null, LIBXML_NOCDATA);
             foreach($xml->document as $document) {
-		if ($document->article == $article) {
+        if ($document->article == $article) {
                     return $document;
                 }
             }
