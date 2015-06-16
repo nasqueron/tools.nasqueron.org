@@ -13,3 +13,8 @@ wikimedia/write/sourcetemplatesgenerator
 # Composer
 vendor
 composer.lock
+
+# NPM
+package.json
+node_modules/
+bundle.js
