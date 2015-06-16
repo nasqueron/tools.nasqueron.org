@@ -39,12 +39,17 @@ Array.prototype.randomElement = function () {
 var CraftBluePrint = {
 
 	bluePrint: null,
+	initialized: false,
 
 	init: function (bluePrint) {
 		this.bluePrint = bluePrint;
+		this.initialized = true;
 	},
 
 	getSource: function () {
+		if (!this.initialized) {
+			return "";
+		}
 		return this.bluePrint.craft.source;
 	},
 
