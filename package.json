@@ -1,0 +1,29 @@
+{
+  "name": "nasqueron-tools",
+  "version": "1.0.0",
+  "description": "Small utilities, gadgets & scripts to perform daily tasks.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react-tools": ">= 0.13.3",
+    "react-select": ">= 0.4.9",
+    "browserify": ">= 10.2.4",
+    "reactify": ">= 1.1.1",
+	"uglifyify": ">= 2.4.23"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nasqueron/tools.nasqueron.org.git"
+  },
+  "keywords": [
+    "nasqueron",
+    "tools"
+  ],
+  "author": "Sébastien Santoro <dereckson@espace-win.org>",
+  "license": "BSD",
+  "bugs": {
+    "url": "http://devcentral.nasqueron.org/tag/tools/"
+  },
+  "homepage": "https://tools.nasqueron.org/"
+}
