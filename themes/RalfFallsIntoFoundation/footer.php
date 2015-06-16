@@ -25,6 +25,9 @@
 
 			<dt>µblogging</dt>
 			<dd><a href="/microblogging/twitterpoints">Twitter Points</a></dd>
+
+            <dt>Geocaching</dt>
+            <dd><a href="/geocaching/string2number">String to number</a></dd>
         	</dl>
         </div>
         <div class="three columns">
@@ -52,9 +55,7 @@
 			<dt>Gadgets</dt>
 			<dd><a href="/gadgets/motd-variations">MOTD in Jive <span class="ampersand">&</span> Valspeak</a></dd>
 			<dd><a href="/gadgets/text-variations">Letters variation</a></dd>
-
-            <dt>Geocaching</dt>
-            <dd><a href="/geocaching/string2number">String to number</a></dd>
+			<dd><a href="/gadgets/generators/">Sentences generator</a></dd>
 
 			<dt>Network</dt>
 			<dd><a href="/network/mx">MX</a></dd>
