@@ -1,0 +1,59 @@
+{
+    "craft": {
+        "mode": "PickOnePerGroup",
+        "separator": " ",
+        "populate": 5,
+        "source": "FreeBSD fortune files"
+    },
+    "groups": [
+        {
+            "type": "BagOfWords",
+            "content": [
+                "integrated",
+                "total",
+                "systematized",
+                "parallel",
+                "functional",
+                "responsive",
+                "optional",
+                "facultative",
+                "optimal",
+                "synchronized",
+                "compatible",
+                "balanced"
+            ]
+        },
+        {
+            "type": "BagOfWords",
+            "content": [
+                "management",
+                "organizational",
+                "monitored",
+                "reciprocal",
+                "digital",
+                "logistical",
+                "transitional",
+                "incremental",
+                "third-generation",
+                "policy"
+            ]
+        },
+        {
+            "type": "BagOfWords",
+            "content": [
+                "options",
+                "flexibility",
+                "capability",
+                "mobility",
+                "programming",
+                "paradigm",
+                "features",
+                "concept",
+                "time-phase",
+                "projection",
+                "hardware",
+                "contingency"
+            ]
+        }
+    ]
+}

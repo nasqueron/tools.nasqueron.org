@@ -1,0 +1,55 @@
+{
+    "craft": {
+        "mode": "PickOnePerGroup",
+        "separator": " ",
+        "populate": 5,
+        "source": "FreeBSD fortune files"
+    },
+    "groups": [
+        {
+            "type": "BagOfWords",
+            "content": [
+                "integrated",
+                "asynchonous",
+                "analog",
+                "parallel",
+                "functional",
+                "transferrable",
+                "digital",
+                "synchronized",
+                "compatible",
+                "balanced"
+            ]
+        },
+        {
+            "type": "BagOfWords",
+            "content": [
+                "encoded",
+                "programmable",
+                "monitored",
+                "reciprocal",
+                "demodulated",
+                "logic-based",
+                "transformational",
+                "incremental",
+                "fifth-generation",
+                "time-phase"
+            ]
+        },
+        {
+            "type": "BagOfWords",
+            "content": [
+                "optimizer",
+                "converter",
+                "reactor",
+                "transducer",
+                "interface",
+                "buffer",
+                "filter",
+                "instrument",
+                "regenerator",
+                "generator"
+            ]
+        }
+    ]
+}
