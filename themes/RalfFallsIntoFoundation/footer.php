@@ -85,7 +85,6 @@
   </div>
   </div></footer>
 
-  <script src="/javascripts/foundation.min.js"></script>
   <script src="/javascripts/jquery.cookie.js"></script>
   <script src="/javascripts/app.js"></script>
   <?= $document->footer ?>
