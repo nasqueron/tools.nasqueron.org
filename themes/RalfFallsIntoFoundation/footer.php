@@ -46,7 +46,7 @@
         </div>
         <div class="three columns">
         	<dl>
-			<dt>Generatorss</dt>
+			<dt>Generators</dt>
 			<dd><a href="/generators/GNOME/desktop-file">GNOME .desktop file generator</dd>
 
 			<dt>Gadgets</dt>
