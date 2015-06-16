@@ -1,0 +1,33 @@
+{
+    "craft": {
+        "mode": "PickSeveralInOneGroup",
+        "amount": 3,
+        "separator": ", ",
+        "prepend": "# '''Supprimer :''' ",
+        "append": ".",
+        "source": "Anthologie de divers avis réellement donnés dans des PàS de la Wikipédia francophone, complétés par des suggestions reçues de contributeurs (généralement plus gentilles que les vraies)."
+    },
+    "group": {
+        "type": "BagOfWords",
+        "content": [
+            "non encyclopédique en l'état",
+            "[[WP:TI|travail inédit]]",
+            "ne respecte pas les conventions de style",
+            "non sourcé",
+            "peu de potentiel de développement",
+            "d'un intérêt douteux pour l'encyclopédie",
+            "[[WP:CAA|ne respecte pas les critères d'admissibilité]]",
+            "totalement n'importe quoi",
+            "moche",
+            "à virer impitoyablement",
+            "simple buzz, je parie",
+            "néant",
+            "notabilité non démontrée",
+            "n'a rien à faire dans une encyclopédie",
+            "si ce truc débile est conservé, je crée mon art autobiographique",
+            "je connais des pokémons plus intéressants",
+            "simple buzz, je parie que dans 3 mois plus personne n'en parlera",
+            "corvée de poubelles"
+        ]
+    }
+}
