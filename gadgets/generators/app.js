@@ -12,8 +12,11 @@
     Dependencies
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
 
+require('babel/polyfill');
+
 var React = require('react');
 var Select = require('react-select');
+var Textarea = require('react-textarea-autosize');
 
 /*  -------------------------------------------------------------
     Strings and Array prototype functions
@@ -227,7 +230,7 @@ var App = React.createClass({
 
 		return <div id="generator-result">
 			<h2>{this.getGeneratorTitle()}</h2>
-			<textarea id="generator-result" className="result" value={this.state.generatorResult} readOnly rows="5" />
+			<Textarea id="generator-result" className="result" value={this.state.generatorResult} readOnly />
 			<button className="button" onClick={this.recraft}>Roll again</button>
 			<p id="generator-source"><strong>Source:</strong> {CraftBluePrint.getSource()}</p>
 		</div>;
