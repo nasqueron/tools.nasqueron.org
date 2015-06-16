@@ -24,5 +24,8 @@ compilejs: gadgets/generators/bundle.js
 gadgets/generators/bundle.js:
 	browserify --transform reactify gadgets/generators/app.js > gadgets/generators/bundle.js
 
-clean:
-	rm -rf vendor composer.lock wikimedia/write/sourcetemplatesgenerator gadgets/generators/bundle.js
+cleanjs:
+	rm -f gadgets/generators/bundle.js
+
+clean: cleanjs
+	rm -rf vendor composer.lock wikimedia/write/sourcetemplatesgenerator
