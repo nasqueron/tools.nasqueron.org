@@ -1,11 +1,18 @@
 <?php
 include('RegexpFactory.php');
 
+// Handles permanent links
+if (array_key_exists('r', $_REQUEST)) {
+	$_REQUEST = unserialize(base64_decode($_REQUEST['r']));
+}
+
 $result = '';
 $enable_join = array_key_exists('join', $_REQUEST) && $_REQUEST["join"] == 'on';
 $enable_split = array_key_exists('split', $_REQUEST) && $_REQUEST["split"] == 'on';
 
 if (array_key_exists('expression', $_REQUEST)) {
+    $requestSerialized = base64_encode(serialize($_REQUEST));
+
     if (array_key_exists('lists', $_REQUEST) && array_key_exists(0, $_REQUEST['lists']) && array_key_exists('replacement', $_REQUEST)) {
         $regexp = new RegexpFactory($_REQUEST['expression']);
         $regexp->addDelimiters();
@@ -104,5 +111,10 @@ if (array_key_exists('expression', $_REQUEST)) {
        </div>
     </div>
     </form>
+<?php
+if (isset($requestSerialized)) {
+	echo "<p><a href=\"/lists/replace/?r=$requestSerialized\">Permanent link to this query</a></p>";
+}
+?>
     <p><strong>Documentation resources:</strong> <a href="http://perldoc.perl.org/perlre.html">PCRE syntax</a> • <a href="http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/">Regular Expressions Cheat Sheet</a>
     <br /><strong>Note:</strong> Write your regexp without delimiter.</p>
