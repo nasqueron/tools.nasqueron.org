@@ -3,7 +3,7 @@
 /**
  * This magic method is called when a class can't be loaded
  */
-function __autoload ($className) {
+spl_autoload_register(function ($className) {
     // Application classes
     $classes['Document'] = './includes/document.php';
     $classes['InstantCommonsMedia'] = './includes/instantcommons.php';
@@ -47,4 +47,6 @@ function __autoload ($className) {
     if (array_key_exists($className, $classes)) {
         require_once($classes[$className]);
     }
-}
+});
+
+require 'vendor/autoload.php';
