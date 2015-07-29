@@ -105,3 +105,19 @@ END;
 
 	return preg_replace_callback($regex, $utf8replacer, $text);
 }
+
+/**
+ * Shortens an URL calling bit.ly
+ *
+ * @param string $url the URL to shorten
+ * @return string the shortened URL
+ */
+function bitly_shorten ($url) {
+	global $Config;
+
+	$bitly = new \Hpatoio\Bitly\Client($Config['BitLyToken']);
+	$reply = $bitly->Shorten([
+		'longUrl' => $url
+	]);
+	return $reply['url'];
+}
