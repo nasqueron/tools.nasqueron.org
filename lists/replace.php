@@ -6,6 +6,14 @@ if (array_key_exists('r', $_REQUEST)) {
 	$_REQUEST = unserialize(base64_decode($_REQUEST['r']));
 }
 
+// bit.ly
+define('FEATURE_BITLY', array_key_exists('BitLyToken', $Config));
+
+if (FEATURE_BITLY) {
+}
+
+// Options handling
+
 $result = '';
 $enable_join = array_key_exists('join', $_REQUEST) && $_REQUEST["join"] == 'on';
 $enable_split = array_key_exists('split', $_REQUEST) && $_REQUEST["split"] == 'on';
@@ -113,7 +121,11 @@ if (array_key_exists('expression', $_REQUEST)) {
     </form>
 <?php
 if (isset($requestSerialized)) {
-	echo "<p><a href=\"/lists/replace/?r=$requestSerialized\">Permanent link to this query</a></p>";
+	$permUrl = "/lists/replace/?r=$requestSerialized";
+	if (FEATURE_BITLY) {
+		$permUrl = bitly_shorten(get_server_url() . $permUrl);
+	}
+	echo "    <p><a href=\"$permUrl\">Permanent link to this query</a></p>\n";
 }
 ?>
     <p><strong>Documentation resources:</strong> <a href="http://perldoc.perl.org/perlre.html">PCRE syntax</a> • <a href="http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/">Regular Expressions Cheat Sheet</a>
