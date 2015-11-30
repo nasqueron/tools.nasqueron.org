@@ -120,7 +120,11 @@ if (array_key_exists('expression', $_REQUEST)) {
 if (isset($requestSerialized)) {
 	$permUrl = "/lists/replace/?r=$requestSerialized";
 	if (FEATURE_BITLY) {
-		$permUrl = bitly_shorten(get_server_url() . $permUrl);
+		try {
+			$permUrl = bitly_shorten(get_server_url() . $permUrl);
+		} catch (Guzzle\Http\Exception\ServerErrorResponseException $ex) {
+			// Degrades silently when bit.ly API throws an error response like a 500.
+		}
 	}
 	echo "    <p><a href=\"$permUrl\">Permanent link to this query</a></p>\n";
 }
