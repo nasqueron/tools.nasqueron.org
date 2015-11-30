@@ -9,9 +9,6 @@ if (array_key_exists('r', $_REQUEST)) {
 // bit.ly
 define('FEATURE_BITLY', array_key_exists('BitLyToken', $Config));
 
-if (FEATURE_BITLY) {
-}
-
 // Options handling
 
 $result = '';
