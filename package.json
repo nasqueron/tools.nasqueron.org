@@ -9,10 +9,10 @@
     "react-tools": ">= 0.13.3",
     "react-select": ">= 0.4.9",
     "react-textarea-autosize": ">= 2.3.1",
-	"babel": ">= 5.5.8",
+    "babel": ">= 5.5.8",
     "browserify": ">= 10.2.4",
     "reactify": ">= 1.1.1",
-	"uglifyify": ">= 2.4.23"
+    "uglifyify": ">= 2.4.23"
   },
   "repository": {
     "type": "git",
