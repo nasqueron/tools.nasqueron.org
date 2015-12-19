@@ -83,9 +83,9 @@ class RegexpFactory {
             return true;
         }
         message_die(
-                    GENERAL_ERROR,
-                    $errstr . "<p>Please report this bug. This error should be handled by the regexp factory.</p>",
-                    'Regexp factory error'
+            GENERAL_ERROR,
+            $errstr . "<p>Please report this bug. This error should be handled by the regexp factory.</p>",
+            'Regexp factory error'
         );
     }
 
