@@ -5,7 +5,7 @@
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     Author:         Sébastien Santoro aka Dereckson
     Project:        Nasqueron
-    Created:        2010
+    Created:        2013
     Licence:        Released under BSD license
     -------------------------------------------------------------    */
 
