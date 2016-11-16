@@ -128,18 +128,6 @@ class Document {
             return true;
         }
 
-        //Fixes common problems
-        if (!string_starts_with($_SERVER["REQUEST_URI"], $_SERVER["DOCUMENT_URI"])) {
-            // Webserver hasn't been configured to send directly the query to
-            // $_SERVER["DOCUMENT_URI"]. This is the engine job instead.
-            $file = substr($_SERVER["DOCUMENT_URI"], 1); //Drops initial /
-            if ($file == self::get_entry_point_url()) return false;
-            if (file_exists($file)) {
-                $this->url = $file;
-                return true;
-            }
-        }
-
         return false;
     }
 
