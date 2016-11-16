@@ -5,16 +5,10 @@
  */
 class RegexpFactory {
     /**
-     * The regular expressions
-     * @var string[]
+     * The regular expression
+     * @var string
      */
-    public $expressions;
-
-    /**
-     * The replacement expressions
-     * @var string[]
-     */
-    public $replaceExpressions;
+    public $expression;
 
     /**
      * The last error
@@ -23,91 +17,49 @@ class RegexpFactory {
     public $lastError;
 
     /**
-     * Regular expression to delimit regexps/replaces
-     */
-    const DELIMITER = '/\r\n|\n|\r/';
-
-    /**
      * Initializes a new instance of the RegexpFactory object.
      *
-     * @param string $rexpressions The regular expression
-     * @param string $replaceExpressions The format of the result string
+     * @param string The regular expression
      */
-     function __construct ($expressions, $replaceExpressions) {
-        $this->expressions = preg_split(static::DELIMITER, $expressions);
-        $this->replaceExpressions = preg_split(static::DELIMITER, $replaceExpressions);
-
-        if (count($this->expressions) != count($this->replaceExpressions)) {
-            throw new Exception("The number of expressions and replacements should match.");
-        }
+    function __construct ($expression) {
+        $this->expression = $expression;
     }
 
     /**
      * Replaces an expression using regexp, a similar way Apache mod_rewrite and Nginx wreplace do.
      *
      * @param string $haystack The expression to perform a replacement on
+     * @param string $replaceExpression The format of the result string
      * @return string The replaced string
      */
-    function replace ($haystack) {
-        $text = $haystack;
-        for ($i = 0 ; $i < count($this->expressions) ; $i++) {
-            $expression = $this->expressions[$i];
-            $replaceExpression = $this->replaceExpressions[$i];
-            $text = preg_replace($expression, $replaceExpression, $text);
-        }
-        return $text;
+    function replace ($haystack, $replaceExpression) {
+        return preg_replace($this->expression, $replaceExpression, $haystack);
     }
 
     /**
-     * Adds delimiters to each regular expression.
+     * Encloses the regular expression with delimiters.
      */
-    public function addDelimiters () {
-        array_walk($this->expressions, function (&$item) {
-            $item = RegexpFactory::addDelimitersToExpression($item);
-        });
-    }
-
-    /**
-     * Encloses the specified regular expression with delimiters.
-     *
-     * @param string $expression The expression to delimit
-     * @return string The expression with delimiters
-     */
-    public static function addDelimitersToExpression ($expression) {
+    function addDelimiters () {
         $delimiters = ['/', '@', '#', '~', '+', '%', '♦', 'µ', '±', '☞'];
         //TODO: check if it's okay to use UTF-8 characters as delimiters
         foreach ($delimiters as $delimiter) {
-            if (strpos($expression, $delimiter) === false) {
-                return $delimiter . $expression . $delimiter;
+            if (strpos($this->expression, $delimiter) === false) {
+                $this->expression = $delimiter . $this->expression . $delimiter;
+                return;
             }
         }
-        throw new Exception("Can't delimite regexp $expression");
-    }
-
-    /**
-     * Determines if the specified expression block is valid.
-     *
-     * @return bool true if each expression is valid; otherwise, false.
-     */
-    public function isValid () {
-        foreach ($this->expressions as $expression) {
-            if (!$this->isValidExpression($expression)) {
-                return false;
-            }
-        }
-        return true;
+        throw new Exception("Can't delimite regexp $this->expression");
     }
 
     /**
      * Determines if the specified expression is valid.
      *
-     * @param string the regexp to test
      * @return bool true if the expression is valid; otherwise, false.
      */
-    public function isValidExpression ($expression) {
+    public function isValid () {
         $this->lastError = '';
         set_error_handler('self::handleErrors');
-        $result = preg_match($expression, null);
+        $result = preg_match($this->expression, null);
         restore_error_handler();
         if ($this->lastError === '' && $result === false) {
             $this->lastError = self::getPCREError();
