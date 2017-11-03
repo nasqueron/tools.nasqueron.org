@@ -16,6 +16,7 @@
 
 define('IN_KERUALD', true);
 define('IN_PLUTON', true);
+define('NO_SESSION', true);
 
 //Keruald libraries
 include('includes/core.php');
@@ -31,8 +32,10 @@ include('includes/core2.php');
 /// Session
 ///
 
-$Session = Session::load();
-$CurrentUser = $Session->get_logged_user();
+if (!NO_SESSION) {
+	$Session = Session::load();
+	$CurrentUser = $Session->get_logged_user();
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 ///
