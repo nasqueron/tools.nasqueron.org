@@ -24,7 +24,7 @@ class User {
     public $active = 0;
     public $email;
     public $regdate;
-    
+
     /*
      * Initializes a new instance
      * @param int $id the primary key
@@ -35,7 +35,7 @@ class User {
             $this->load_from_database();
         }
     }
-    
+
     /*
      * Loads the object User (ie fill the properties) from the $_POST array
      */
@@ -47,7 +47,7 @@ class User {
         if (array_key_exists('email', $_POST)) $this->email = $_POST['email'];
         if (array_key_exists('regdate', $_POST)) $this->regdate = $_POST['regdate'];
     }
-    
+
     /*
      * Loads the object User (ie fill the properties) from the database
      */
@@ -59,12 +59,12 @@ class User {
             $this->lastError = "User unkwown: " . $this->id;
             return false;
         }
-        
+
         $this->load_from_row($row);
-        
+
         return true;
     }
-    
+
     /*
      * Loads the object User (ie fill the properties) from the database row
      */
@@ -76,13 +76,13 @@ class User {
         $this->email    = $row['user_email'];
         $this->regdate  = $row['user_regdate'];
     }
-    
+
     /*
      * Saves to database
      */
     function save_to_database () {
         global $db;
-        
+
         $id = $this->id ? "'" . $db->sql_escape($this->id) . "'" : 'NULL';
         $name = $db->sql_escape($this->name);
         $password = $db->sql_escape($this->password);
@@ -95,13 +95,13 @@ class User {
         if (!$db->sql_query($sql)) {
             message_die(SQL_ERROR, "Unable to save user", '', __LINE__, __FILE__, $sql);
         }
-        
+
         if (!$this->id) {
             //Gets new record id value
             $this->id = $db->sql_nextid();
         }
     }
-    
+
     /*
      * Updates the specified field in the database record
      */
@@ -117,13 +117,13 @@ class User {
             message_die(SQL_ERROR, "Unable to save $field field", '', __LINE__, __FILE__, $sql);
         }
     }
-    
+
     /*
      * Generates a unique user id
      */
     function generate_id () {
         global $db;
-    
+
         do {
             $this->id = mt_rand(2001, 9999);
             $sql = "SELECT COUNT(*) FROM " . TABLE_USERS . " WHERE user_id = $this->id";
@@ -131,9 +131,9 @@ class User {
                 message_die(SQL_ERROR, "Can't check if a user id is free", '', __LINE__, __FILE__, $sql);
             }
             $row = $db->sql_fetchrow($result);
-        } while ($row[0]);		
+        } while ($row[0]);
     }
-    
+
     /*
      * Fills password field with encrypted version
      * of the specified clear password
@@ -156,10 +156,10 @@ class User {
         $row = $db->sql_fetchrow($result);
         return ($row[0] == 0);
     }
-    
+
     /*
      * Initializes a new User instance ready to have its property filled
-     * @return User the new user instance 
+     * @return User the new user instance
      */
     public static function create () {
         $user = new User();
@@ -167,7 +167,7 @@ class User {
         $user->active = true;
         return $user;
     }
-    
+
     /*
      * Gets user from specified e-mail
      * @return User the user matching the specified e-mail ; null, if the mail were not found.
@@ -178,14 +178,14 @@ class User {
         if (!$result = $db->sql_query($sql)) {
             message_die(SQL_ERROR, "Can't get user", '', __LINE__, __FILE__, $sql);
         }
-        
+
         if ($row = $db->sql_fetchrow($result)) {
             //E-mail found.
             $user = new User();
             $user->load_from_row($row);
             return $user;
         }
-        
+
         //E-mail not found.
         return null;
     }
