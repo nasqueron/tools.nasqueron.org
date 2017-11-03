@@ -22,8 +22,14 @@ ini_set('register_globals', 'off');
 //Reports all errors, help notices (including STRICT in PHP 6)
 error_reporting(E_ALL & ~E_NOTICE);
 
+//Load config
+require_once("default-config.php");
+
+if (file_exists("config.php")) {
+    include_once("config.php");
+}
+
 //Load libraries
-include_once("config.php");               //Site config
 include_once("error.php");               //Error management
 include_once("mysqli.php");             //MySQL layer
 include_once("session.php");           //Sessions handler
