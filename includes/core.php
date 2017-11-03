@@ -275,7 +275,7 @@ function get_current_url () {
     global $Config;
 
     //Gets relevant URL part from relevant $_SERVER variables
-    if (array_key_exists('PATH_INFO', $_SERVER)) {
+    if (!empty($_SERVER['PATH_INFO'])) {
         //Without mod_rewrite, and url like /index.php/controller
         //we use PATH_INFO. It's the easiest case.
         return $_SERVER["PATH_INFO"];
