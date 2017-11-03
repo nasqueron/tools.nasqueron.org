@@ -41,7 +41,7 @@ include_once("autoload.php");         //Autoloader
  * @return string the username
  */
 function get_username ($user_id) {
-	global $db;
+	$db = sql_db::load();
 
 	$user_id = $db->sql_escape($user_id);
     $sql = 'SELECT username FROM '. TABLE_USERS . " WHERE user_id = '$userid'";
@@ -54,7 +54,7 @@ function get_username ($user_id) {
  * @return string the user ID
  */
 function get_userid ($username) {
-	global $db;
+	$db = sql_db::load();
 
 	$username = $db->sql_escape($username);
 	$sql = 'SELECT user_id FROM '. TABLE_USERS . " WHERE username LIKE '$username'";

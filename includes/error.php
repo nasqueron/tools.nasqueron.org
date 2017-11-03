@@ -78,7 +78,7 @@ function message_die ($code, $text = '', $title = '', $line = '', $file = '', $s
             break;
 
         case SQL_ERROR:
-            global $db;
+            $db = sql_db::load();
             $title = $title ? $title : "SQL error";
 
             //Gets SQL error information

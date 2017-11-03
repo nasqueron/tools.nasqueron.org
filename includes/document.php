@@ -254,7 +254,7 @@ class Document {
      * Prints the document body
      */
     public function render_body () {
-        global $db, $Config, $Session, $CurrentUser;
+        global $Config, $Session, $CurrentUser;
         $document = $this;
 
         //404 header
@@ -300,14 +300,14 @@ class Document {
      * Prints the document
      *
      * Use this method if you don't wish to have access to any other global
-     * variables than $db, $Config, $Session and $CurrentUser.
+     * variables than $Config, $Session and $CurrentUser.
      *
      * A more flexible method is the body of this method in _includes/body.php
      * and to add in your skin <?php include('_includes/body.php'); ?>
      */
     function render () {
         //Global variables for the header and the footer
-        global $db, $Config, $Session, $CurrentUser;
+        global $Config, $Session, $CurrentUser;
         $document = $this;
 
         //HTML output

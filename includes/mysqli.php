@@ -27,6 +27,13 @@ if (!defined('SQL_LAYER')) {
         private $db;
 
         /**
+         * Singleton instance
+         *
+         * @var sql_db
+         */
+        private static $instance = null;
+
+        /**
          * Initializes a new instance of the database abstraction class, for MySQLi engine
          */
         function __construct($host = 'localhost', $username = '', $password = '', $database = '') {
@@ -37,6 +44,27 @@ if (!defined('SQL_LAYER')) {
             if ($database != '') {
                 $this->db->select_db($database);
             }
+
+            $db->set_charset('utf8');
+        }
+
+        static function load() {
+            if (self::$instance === null) {
+                self::makeSingletonInstance();
+            }
+
+            return self::$instance;
+        }
+
+        private static function makeSingletonInstance() {
+            global $Config;
+
+            self::$instance = new sql_db(
+                $Config['sql']['host'], $Config['sql']['username'],
+                $Config['sql']['password'], $Config['sql']['database']
+            );
+
+            unset($Config['sql']);
         }
 
         /**
@@ -137,13 +165,4 @@ if (!defined('SQL_LAYER')) {
            $this->db->set_charset($encoding);
         }
     }
-
-    //Creates an instance of this database class with configuration values
-    $db = new sql_db($Config['sql']['host'], $Config['sql']['username'], $Config['sql']['password'], $Config['sql']['database']);
-
-    //To improve security, we unset sql parameters
-    unset($Config['sql']);
-
-    //Sets SQL connexion in UTF-8.
-    $db->set_charset('utf8');
 }

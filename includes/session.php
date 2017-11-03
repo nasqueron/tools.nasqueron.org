@@ -86,7 +86,8 @@ class Session {
      * ii. sets offline relevant sessions
      */
     public static function clean_old_sessions () {
-        global $db, $Config;
+        global $Config;
+        $db = sql_db::load();
 
         //Gets session and online status lifetime (in seconds)
         //If not specified in config, sets default 5 and 120 minutes values
@@ -109,7 +110,8 @@ class Session {
      * Updates or creates a session in the database
      */
     public function update () {
-        global $db, $Config;
+        global $Config;
+        $db = sql_db::load();
 
         //Cleans up session
         //To boost SQL performances, try a random trigger
@@ -136,7 +138,8 @@ class Session {
 
         if ($count == -1) {
             //Queries sessions table
-            global $db, $Config;
+            global $Config;
+            $db = sql_db::load();
 
             $resource = array_key_exists('ResourceID', $Config) ? '\'' . $db->sql_escape($Config['ResourceID']) . '\'' : 'default';
             $sql = "SELECT count(*) FROM " . TABLE_SESSIONS . " WHERE session_resource = $resource AND session_online = 1";
@@ -153,7 +156,7 @@ class Session {
      * @return string the session specified field's value
      */
     public function get_info ($info) {
-        global $db;
+        $db = sql_db::load();
 
         $id = $db->sql_escape($this->id);
         $sql = "SELECT `$info` FROM " . TABLE_SESSIONS . " WHERE session_id = '$id'";
@@ -166,7 +169,7 @@ class Session {
      * @param string $value the value to set
      */
     public function set_info ($info, $value) {
-        global $db;
+        $db = sql_db::load();
 
         $value = ($value === null) ? 'NULL' : "'" . $db->sql_escape($value) . "'";
         $id = $db->sql_escape($this->id);
@@ -180,7 +183,7 @@ class Session {
      * @return User the logged user information
      */
     public function get_logged_user () {
-        global $db;
+        $db = sql_db::load();;
 
         //Gets session information
         $id = $db->sql_escape($this->id);
@@ -216,7 +219,7 @@ class Session {
      * @param string $user_id the user ID
      */
     public function user_login ($user_id) {
-        global $db;
+        $db = sql_db::load();
 
         //Sets specified user ID in sessions table
         $user_id = $db->sql_escape($user_id);
@@ -230,7 +233,7 @@ class Session {
      * Updates the session in an user logout context
      */
     public function user_logout () {
-        global $db;
+        $db = sql_db::load();
 
         //Sets anonymous user in sessions table
         $user_id = $db->sql_escape(ANONYMOUS_USER);
