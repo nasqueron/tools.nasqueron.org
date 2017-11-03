@@ -8,7 +8,7 @@
  * Login and logout handler.
  *
  * 0.1    2010-02-27 1:52    DcK
- * 
+ *
  */
 
 if ($_POST['LogIn']) {

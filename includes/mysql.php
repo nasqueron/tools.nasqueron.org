@@ -8,7 +8,7 @@
  * MySQL layer and helper class
  *
  * 0.1    2010-02-27 1:52    DcK
- * 
+ *
  */
 
 if (!defined('SQL_LAYER')) {
@@ -16,7 +16,7 @@ if (!defined('SQL_LAYER')) {
 
     /*
      * SQL layer and helper class: MySQL
-     * 
+     *
      * @package Keruald
      * @subpackage Keruald
      * @copyright Copyright (c) 2010, Sébastien Santoro aka Dereckson
@@ -35,13 +35,13 @@ if (!defined('SQL_LAYER')) {
         function __construct($host = 'localhost', $username = '', $password = '', $database = '') {
             //Connects to MySQL server
             $this->id = @mysql_connect($host, $username, $password) or $this->sql_die();
-            
+
             //Selects database
             if ($database != '') {
                 mysql_select_db($database, $this->id);
             }
         }
-        
+
         /*
          * Outputs a can't connect to the SQL server message and exits.
          * It's called on connect failure
@@ -51,7 +51,7 @@ if (!defined('SQL_LAYER')) {
             //e.g. in a demo or appliance context, include('start.html'); exit;
             die ("Can't connect to SQL server.");
         }
-        
+
         /*
          * Sends a unique query to the database
          * @return mixed if the query is successful, a result identifier ; otherwise, false
@@ -67,7 +67,7 @@ if (!defined('SQL_LAYER')) {
         function sql_fetchrow ($result) {
             return mysql_fetch_array($result);
         }
-        
+
         /*
          * Gets last SQL error information
          * @return array an array with two keys, code and message, containing error information
@@ -77,7 +77,7 @@ if (!defined('SQL_LAYER')) {
             $error['message'] = mysql_error($this->id);
             return $error;
         }
-        
+
         /*
          * Gets the number of rows affected or returned by a query
          * @return int the number of rows affected (delete/insert/update) or the number of rows in query result
@@ -85,7 +85,7 @@ if (!defined('SQL_LAYER')) {
         function sql_numrows ($result) {
             return mysql_num_rows($result);
         }
-        
+
         /*
          * Gets the primary key value of the last query (works only in INSERT context)
          * @return int  the primary key value
@@ -93,7 +93,7 @@ if (!defined('SQL_LAYER')) {
         function sql_nextid () {
             return mysql_insert_id($this->id);
         }
-        
+
         /*
          * Express query method, returns an immediate and unique result
          *
@@ -112,12 +112,12 @@ if (!defined('SQL_LAYER')) {
             } else {
                 //Fetches row
                 $row = $this->sql_fetchrow($result);
-                
+
                 //If $return_as_string is true, returns first query item (scalar mode) ; otherwise, returns row
                 return $return_as_string ? $row[0] : $row;
             }
         }
-        
+
         /*
          * Escapes a SQL expression
          * @param string expression The expression to escape
@@ -126,7 +126,7 @@ if (!defined('SQL_LAYER')) {
         function sql_escape ($expression) {
             return mysql_real_escape_string($expression);
         }
-        
+
         /*
          * Set charset
          */
@@ -139,13 +139,13 @@ if (!defined('SQL_LAYER')) {
             }
         }
     }
-    
+
     //Creates an instance of this database class with configuration values
     $db = new sql_db($Config['sql']['host'], $Config['sql']['username'], $Config['sql']['password'], $Config['sql']['database']);
-    
+
     //To improve security, we unset sql parameters
     unset($Config['sql']);
-    
+
     //Sets SQL connexion in UTF8. PHP 5.2.3+
     $db->set_charset('utf8');
 }
