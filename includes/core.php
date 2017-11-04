@@ -255,15 +255,22 @@ function get_page_url () {
  * @return string the server URL
  */
 function get_server_url () {
-    switch ($port = $_SERVER['SERVER_PORT']) {
+    if (isset($_SERVER['HTTP_HOST'])) {
+        list($name, $port) = explode(':', $_SERVER['HTTP_HOST'], 2);
+    } else {
+        $port = $_SERVER['SERVER_PORT'];
+        $name = $_SERVER['SERVER_NAME'];
+    }
+
+    switch ($port) {
         case '80':
-            return "http://$_SERVER[SERVER_NAME]";
+            return "http://$name";
 
         case '443':
-            return "https://$_SERVER[SERVER_NAME]";
+            return "https://$name";
 
         default:
-            return "http://$_SERVER[SERVER_NAME]:$_SERVER[SERVER_PORT]";
+            return "http://$name:$port";
     }
 }
 
