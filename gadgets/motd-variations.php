@@ -1,10 +1,23 @@
       <!-- Actions -->
-      <div id="action-icons"><a href="" title="Refresh this page"><i class="general foundicon-refresh"></i></a></div>
+      <div id="action-icons">
+          <a href="" title="Refresh this page">
+              <i class="general foundicon-refresh"></i>
+          </a>
+      </div>
 
       <!-- Content -->
 <?php
-	$content = `/home/dereckson/public_html/variants.tcl`;
-	$pos1 = strpos($content, '<h2>');
-	$pos2 = strpos($content, '</body>');
-        $content = str_replace('<h2>', '<h3>', $content);
-	echo substr($content, $pos1, $pos2 - $pos1);
+    $fortune = rtrim(`/usr/games/fortune`);
+    echo "      <h3>English text</h3>\n";
+    echo "      <p>$fortune</p>\n\n";
+
+    $variants = [
+        'jive',
+        'valspeak',
+    ];
+
+    foreach ($variants as $variant) {
+        echo "      <h3>English variant — $variant</h3>\n";
+        $text = escapeshellarg($fortune);
+        echo "      <p>", rtrim(`echo $text | $variant`), "</p>\n\n";
+    }
