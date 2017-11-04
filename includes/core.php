@@ -41,11 +41,11 @@ include_once("autoload.php");         //Autoloader
  * @return string the username
  */
 function get_username ($user_id) {
-	$db = sql_db::load();
+    $db = sql_db::load();
 
-	$user_id = $db->sql_escape($user_id);
+    $user_id = $db->sql_escape($user_id);
     $sql = 'SELECT username FROM '. TABLE_USERS . " WHERE user_id = '$userid'";
-	return $db->sql_query_express($sql, "Can't get username from specified user id");
+    return $db->sql_query_express($sql, "Can't get username from specified user id");
 }
 
 /*
@@ -54,10 +54,10 @@ function get_username ($user_id) {
  * @return string the user ID
  */
 function get_userid ($username) {
-	$db = sql_db::load();
+    $db = sql_db::load();
 
-	$username = $db->sql_escape($username);
-	$sql = 'SELECT user_id FROM '. TABLE_USERS . " WHERE username LIKE '$username'";
+    $username = $db->sql_escape($username);
+    $sql = 'SELECT user_id FROM '. TABLE_USERS . " WHERE username LIKE '$username'";
     return $db->sql_query_express($sql, "Can't get user id from specified username");
 }
 
@@ -75,7 +75,7 @@ function get_userid ($username) {
  * @return string 's' if the amount is greater or equal than 2 ; otherwise, ''
  */
 function s ($amount) {
-	if ($amount >= 2 || $amount <= -2 ) return 's';
+    if ($amount >= 2 || $amount <= -2 ) return 's';
 }
 
 /*
@@ -83,7 +83,7 @@ function s ($amount) {
  * @param mixed $mixed the variable to dump
  */
 function dprint_r ($mixed) {
-	echo '<pre>';
+    echo '<pre>';
     print_r($mixed);
     echo '</pre>';
 }
@@ -93,22 +93,22 @@ function dprint_r ($mixed) {
  * @return string a guid (without {})
  */
 function new_guid () {
-	//The guid chars
+    //The guid chars
     $chars = explode(',', 'a,b,c,d,e,f,0,1,2,3,4,5,6,7,8,9');
 
     //Let's build our 36 characters string
     //e.g. 68ed40c6-f5bb-4a4a-8659-3adf23536b75
-	$guid = "";
-	for ($i = 0 ; $i < 36 ; $i++) {
+    $guid = "";
+    for ($i = 0 ; $i < 36 ; $i++) {
         if ($i == 8 || $i == 13 || $i == 18 || $i == 23) {
             //Dashes at position 9, 14, 19 and 24
             $guid .= "-";
-		} else {
+        } else {
             //0-f hex digit elsewhere
-			$guid .= $chars[mt_rand() % sizeof($characters)];
-		}
-	}
-	return $guid;
+            $guid .= $chars[mt_rand() % sizeof($characters)];
+        }
+    }
+    return $guid;
 }
 
 /*
@@ -122,15 +122,15 @@ function is_guid ($expression) {
     if (strlen($expression) != 36) return false;
 
     $expression = strtolower($expression);
-	for ($i = 0 ; $i < 36 ; $i++) {
-		if ($i == 8 || $i == 13 || $i == 18 || $i == 23) {
-			//with dashes
-			if ($expression[$i] != '-') return false;
-		} else {
-		    //and hex numbers
-			if (!is_numeric($expression[$i]) && $expression[$i] != 'a' && $expression[$i] != 'b' && $expression[$i] != 'c' && $expression[$i] != 'd' && $expression[$i] != 'e' && $expression[$i] != 'f' ) return false;
-		}
-	}
+    for ($i = 0 ; $i < 36 ; $i++) {
+        if ($i == 8 || $i == 13 || $i == 18 || $i == 23) {
+            //with dashes
+            if ($expression[$i] != '-') return false;
+        } else {
+            //and hex numbers
+            if (!is_numeric($expression[$i]) && $expression[$i] != 'a' && $expression[$i] != 'b' && $expression[$i] != 'c' && $expression[$i] != 'd' && $expression[$i] != 'e' && $expression[$i] != 'f' ) return false;
+        }
+    }
     return true;
 }
 
@@ -185,34 +185,34 @@ function get_extension ($file) {
  * @return boolean true if $haystack starts with $needle ; otherwise, false.
  */
 function string_starts_with ($haystack, $needle, $case_sensitive = true) {
-	if (!$case_sensitive) {
-		$haystack = strtoupper($haystack);
-		$needle = strtoupper($needle);
-	}
-	if ($haystack == $needle) return true;
-	return strpos($haystack, $needle) === 0;
+    if (!$case_sensitive) {
+        $haystack = strtoupper($haystack);
+        $needle = strtoupper($needle);
+    }
+    if ($haystack == $needle) return true;
+    return strpos($haystack, $needle) === 0;
 }
 
 /**
  * Gets the portion of the string between $includeFrom and $includeTo
  */
 function string_between ($haystack, $from, $to, $includeFrom = false, $includeTo = false) {
-	//Gets start position
-	$pos1 = strpos($haystack, $from);
-	if ($pos1 === false) {
-		return "";
-	}
-	if (!$includeFrom) $pos1 += strlen($from);
+    //Gets start position
+    $pos1 = strpos($haystack, $from);
+    if ($pos1 === false) {
+        return "";
+    }
+    if (!$includeFrom) $pos1 += strlen($from);
 
-	//Gets end position
-	$pos2 = strpos($haystack, $to, $pos1 + strlen($from));
-	if ($pos2 === false) {
-		return substr($haystack, $pos1);
-	}
-	if ($includeTo) $pos2 += strlen($to);
+    //Gets end position
+    $pos2 = strpos($haystack, $to, $pos1 + strlen($from));
+    if ($pos2 === false) {
+        return substr($haystack, $pos1);
+    }
+    if ($includeTo) $pos2 += strlen($to);
 
-	//Gets middle part
-	return substr($haystack, $pos1, $pos2 - $pos1);
+    //Gets middle part
+    return substr($haystack, $pos1, $pos2 - $pos1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -255,8 +255,8 @@ function get_page_url () {
  * @return string the server URL
  */
 function get_server_url () {
-	switch ($port = $_SERVER['SERVER_PORT']) {
-		case '80':
+    switch ($port = $_SERVER['SERVER_PORT']) {
+        case '80':
             return "http://$_SERVER[SERVER_NAME]";
 
         case '443':
@@ -264,7 +264,7 @@ function get_server_url () {
 
         default:
             return "http://$_SERVER[SERVER_NAME]:$_SERVER[SERVER_PORT]";
-	}
+    }
 }
 
 /*
