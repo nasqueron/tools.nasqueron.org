@@ -156,10 +156,8 @@ class Document {
 
         //Fills info from URL
         $pathinfo = pathinfo($this->url);
-        if (!$this->is_homepage()) {
-            $this->topic = str_replace('/', '-', $pathinfo['dirname']);
-            $this->article = $pathinfo['filename']; //PHP 5.2.0+
-        }
+        $this->topic = str_replace('/', '-', $pathinfo['dirname']);
+        $this->article = $pathinfo['filename']; //PHP 5.2.0+
         $this->extension = strtolower($pathinfo['extension']);
         $this->title = "[$this->article]";
 
