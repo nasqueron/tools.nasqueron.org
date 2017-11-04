@@ -257,11 +257,6 @@ class Document {
         global $Config, $Session, $CurrentUser;
         $document = $this;
 
-        //404 header
-        if ($this->status == 404) {
-            header("Status: 404 Not Found");
-        }
-
         //Header content
         if (!$this->noheader) {
             $header = $this->get_directory() . '/_header.php';
@@ -309,6 +304,11 @@ class Document {
         //Global variables for the header and the footer
         global $Config, $Session, $CurrentUser;
         $document = $this;
+
+        //Headers
+        if ($this->status == 404) {
+            header("Status: 404 Not Found");
+        }
 
         //HTML output
         $theme = $Config['Theme'];
