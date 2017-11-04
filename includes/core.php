@@ -305,8 +305,10 @@ function get_current_url () {
     //      (a working could be $document_root/index.php?$query_string);
     $url = array_key_exists('REDIRECT_URL', $_SERVER) ? $_SERVER["REDIRECT_URL"] : $_SERVER["REQUEST_URI"];
     $url = substr(get_server_url() . $url, $len);
-    if ($_SERVER['QUERY_STRING']) {
-        return substr($url, 0, strlen($url) - strlen($_SERVER['QUERY_STRING']) - 1);
+
+    $pos = strpos($url, '?');
+    if ($pos !== false) {
+        return substr($url, 0, $pos);
     }
     return $url;
 }
