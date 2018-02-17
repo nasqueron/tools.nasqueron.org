@@ -6,7 +6,7 @@
 
 <h3>References</h3>
 <ul class="inline-list">
-  <li><a href="http://www.legalworld.be/legalworld/uploadedFiles/TOCS/fr/Guide_des_citations_et_r%C3%A9f%C3%A9rences/GUIAB_VB_9010_final.pdf?LangType=2060" title="Guide des citations, références et abréviations juridiques">Guide des citations, références et abréviations juridiques</a></li>
+  <li><a href="https://legalworld.wolterskluwer.be/media/4562/guide-des-citations-references-abreviations-juridiques.pdf" title="Guide des citations, références et abréviations juridiques">Guide des citations, références et abréviations juridiques</a></li>
 </ul>
 
 <h3>Moniteur belge</h3>
