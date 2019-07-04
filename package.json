@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Small utilities, gadgets & scripts to perform daily tasks.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "react-tools": ">= 0.13.3",
@@ -12,7 +14,8 @@
     "babel": ">= 5.5.8",
     "browserify": ">= 10.2.4",
     "reactify": ">= 1.1.1",
-    "uglifyify": ">= 2.4.23"
+    "uglifyify": ">= 2.4.23",
+    "snyk": "^1.189.0"
   },
   "repository": {
     "type": "git",
@@ -27,5 +30,6 @@
   "bugs": {
     "url": "http://devcentral.nasqueron.org/tag/tools/"
   },
-  "homepage": "https://tools.nasqueron.org/"
+  "homepage": "https://tools.nasqueron.org/",
+  "snyk": true
 }
