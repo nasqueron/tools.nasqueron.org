@@ -1,44 +1,44 @@
 <documents topic="infographics">
-	<document>
-		<article>parlement-fr</article>
-		<title>Le parlement Français, une gérontocratie ?</title>
-		<description>Distribution par âge des sénateurs &amp; députés.</description>
-		<head><![CDATA[
-	<link href="/includes/kendo/styles/kendo.dataviz.min.css" rel="stylesheet">
-	<script src="/includes/kendo/js/jquery.min.js"></script>
-	<script src="/includes/kendo/js/kendo.dataviz.min.js"></script>
-	<style>
-		/* Tooltip styling */
-		.xlarger {
-			width: 600px;
-		}
+    <document>
+        <article>parlement-fr</article>
+        <title>Le parlement Français, une gérontocratie ?</title>
+        <description>Distribution par âge des sénateurs &amp; députés.</description>
+        <head><![CDATA[
+    <link href="/includes/kendo/styles/kendo.dataviz.min.css" rel="stylesheet">
+    <script src="/includes/kendo/js/jquery.min.js"></script>
+    <script src="/includes/kendo/js/kendo.dataviz.min.js"></script>
+    <style>
+        /* Tooltip styling */
+        .xlarger {
+            width: 600px;
+        }
 
-		.larger {
-			width: 400px;
-		}
+        .larger {
+            width: 400px;
+        }
 
-		.tooltipList {
-			margin-left: 1em !important;
-			margin-top: 0.5em;
-			margin-bottom: 0;
-		}
-		.tooltipList li {
-			font-size: 0.75em;
-			list-style: none;
-		}
+        .tooltipList {
+            margin-left: 1em !important;
+            margin-top: 0.5em;
+            margin-bottom: 0;
+        }
+        .tooltipList li {
+            font-size: 0.75em;
+            list-style: none;
+        }
 
-		.block-grid {
-			margin-top: 0.5em !important;
-		}
+        .block-grid {
+            margin-top: 0.5em !important;
+        }
 
-		.block-grid li {
-			padding-bottom: 0 !important;
-		}
+        .block-grid li {
+            padding-bottom: 0 !important;
+        }
 
-		#svg {
-			margin-left: 2em;
-		}
-	</style>
-		]]></head>
-	</document>
+        #svg {
+            margin-left: 2em;
+        }
+    </style>
+        ]]></head>
+    </document>
 </documents>
