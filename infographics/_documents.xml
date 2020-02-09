@@ -1,5 +1,10 @@
 <documents topic="infographics">
     <document>
+        <article>index</article>
+        <title>Infographics</title>
+        <description>Visualisation to understand raw data.</description>
+    </document>
+    <document>
         <article>parlement-fr</article>
         <title>Le parlement Français, une gérontocratie ?</title>
         <description>Distribution par âge des sénateurs &amp; députés.</description>
