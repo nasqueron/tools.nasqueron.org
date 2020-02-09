@@ -1,0 +1,44 @@
+  <div class="row">
+    <div class="two mobile-one columns">
+      <h3>Software</h3>
+      <ul class="menu">
+        <li>Openfire</li>
+      </ul>
+    </div>
+    <div class="ten mobile-three columns">
+      <h3>Releases</h3>
+      <div id="releases-graph"></div>
+      <p><strong>Source:</strong> <a href="http://download.igniterealtime.org/openfire/docs/latest/changelog.html">Openfire Changelog</a></p>
+    </div>
+  </div>
+
+  <style>
+      #releases-graph {
+          font-size: 1.5em;
+      }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/2.8.1/d3.v2.min.js" integrity="sha256-HU95Gc4ycxJJmm+LrtAsSwFS5MF/Zk3X5ccSw8+c1C8=" crossorigin="anonymous"></script>
+  <script src="https://assets.nasqueron.org/lib/timeknots/timeknots-min.js"></script>
+  <script>
+    let data;
+
+    $.getJSON("https://api.nasqueron.org/datasources/dev/openfire/changelog", function(response) {
+        data = response
+                   .map(function (entry) {
+                       return {
+                           name: entry.version,
+                           date: new Date(entry.date * 1000).toISOString(),
+                       }
+                   });
+
+        TimeKnots.draw("#releases-graph", data, {
+            dateFormat: "%Y-%m-%d",
+            width: 320,
+            height: 1024,
+            color: "703030",
+            showLabels: true,
+            labelFormat: "%Y-%m",
+            horizontalLayout: false,
+        });
+    });
+  </script>

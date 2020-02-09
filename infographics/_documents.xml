@@ -41,4 +41,9 @@
     </style>
         ]]></head>
     </document>
+    <document>
+        <article>releases</article>
+        <title>Software releases</title>
+        <description>How often a software is released?</description>
+    </document>
 </documents>
