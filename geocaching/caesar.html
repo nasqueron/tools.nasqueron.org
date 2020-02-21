@@ -1,0 +1,44 @@
+<h2>Caesar cipher</h2>
+<form>
+<div class="row collapse" style="margin-bottom: 1em;">
+    <h3>Source text</h3>
+    <textarea rows="4" name="text" id="text" placeholder="Lorem ipsum dolor sit amet nunc abuntur - Write here the text to rewrite."></textarea>
+
+    <h3>Permutations</h3>
+    <div id="permutations"><em>Write some text above to compute permutations.</em></div>
+</div>
+</form>
+<script>
+function shiftLetter(c, k) {
+    const baseValue = c.charCodeAt(0) - 64
+
+    if (baseValue < 0 || baseValue > 26) {
+        return c
+    }
+
+    shiftedValue = (baseValue + 26 - k) % 26
+
+    if (shiftedValue === 0) {
+        shiftedValue = 26 // Z and not @
+    }
+
+    return String.fromCharCode(64 + shiftedValue)
+}
+
+function permute(sourceText, targetElement) {
+    targetElement.empty()
+
+    for (let k = 1 ; k < 26 ; k++) {
+        permutedText = sourceText
+            .split('')
+            .map(c => shiftLetter(c, k))
+            .join('')
+
+        targetElement.append("<p>" + permutedText + "</p>")
+    }   
+}
+
+$('#text').bind('input propertychange', function() {
+    permute($(this).val().toUpperCase(), $("#permutations"))
+})
+</script>

@@ -9,4 +9,9 @@
 		<title>Numeric operations from strings</title>
 		<description>Gets numbers from strings content.</description>
 	</document>
+	<document>
+		<article>caesar</article>
+		<title>Caesar cipher</title>
+		<description>Shift message letters.</description>
+	</document>
 </documents>

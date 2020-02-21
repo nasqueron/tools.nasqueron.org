@@ -27,6 +27,7 @@
 			<dd><a href="/microblogging/twitterpoints">Twitter Points</a></dd>
 
             <dt>Geocaching</dt>
+            <dd><a href="/geocaching/caesar">Caesar cipher</a></dd>
             <dd><a href="/geocaching/string2number">String to number</a></dd>
         	</dl>
         </div>
