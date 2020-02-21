@@ -1,5 +1,10 @@
 <documents topic="geocaching">
 	<document>
+		<article>index</article>
+		<title>Geocaching tools</title>
+		<description>Utilities useful to solve geocaching puzzles.</description>
+	</document>
+	<document>
 		<article>string2number</article>
 		<title>Numeric operations from strings</title>
 		<description>Gets numbers from strings content.</description>
