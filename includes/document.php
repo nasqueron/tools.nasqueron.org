@@ -239,7 +239,7 @@ class Document {
     public function get_footer () {
         $dirs = explode('-', $this->topic);
         for ($i = count($dirs) ; $i > 0 ; $i--) {
-            $footer = join($dirs, '/') . '/_footer.php';
+            $footer = implode('/', $dirs) . '/_footer.php';
             if (file_exists($footer)) {
                 return $footer;
             }
