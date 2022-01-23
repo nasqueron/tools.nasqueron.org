@@ -14,7 +14,7 @@ if (array_key_exists('user', $_REQUEST)) {
 <form>
 <div class="row collapse">
   <div class="ten mobile-three columns">
-    <input type="text" name="user" id="user" value="<?= $_REQUEST['user'] ?>" placeholder="username@server" />
+    <input type="text" name="user" id="user" value="<?= $_REQUEST['user'] ?? "" ?>" placeholder="username@server" />
   </div>
   <div class="two mobile-one columns">
     <input type="submit" class="button expand postfix" value="Finger" />

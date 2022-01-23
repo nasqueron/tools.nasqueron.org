@@ -59,7 +59,7 @@ class RegexpFactory {
     public function isValid () {
         $this->lastError = '';
         set_error_handler('self::handleErrors');
-        $result = preg_match($this->expression, null);
+        $result = preg_match($this->expression, "");
         restore_error_handler();
         if ($this->lastError === '' && $result === false) {
             $this->lastError = self::getPCREError();

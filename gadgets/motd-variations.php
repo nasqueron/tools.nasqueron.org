@@ -7,7 +7,7 @@
 
       <!-- Content -->
 <?php
-    $fortune = rtrim(`/usr/games/fortune`);
+    $fortune = rtrim(`/usr/bin/fortune`);
     echo "      <h3>English text</h3>\n";
     echo "      <p>$fortune</p>\n\n";
 

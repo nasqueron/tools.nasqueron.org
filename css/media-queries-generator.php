@@ -1,5 +1,5 @@
 <?php
-	$widths = array_key_exists('widths', $_REQUEST) ? $_REQUEST['widths'] : '400, 720, 1280, 1440, 1920, 2880';
+	$widths = $_REQUEST['widths'] ?? '400, 720, 1280, 1440, 1920, 2880';
 ?>
     <form name="media-queries-generator" class="custom">
     <div class="row collapse">
@@ -35,10 +35,10 @@
     </div>
     <div class="row collapse">
         <div class="six columns">
-            <textarea name="css" id="css" rows="16" style="width: 99%;" placeholder="The CSS content" onChange="BuildCSS();"><?= $_REQUEST['css'] ?></textarea>
+            <textarea name="css" id="css" rows="16" style="width: 99%;" placeholder="The CSS content" onChange="BuildCSS();"><?= $_REQUEST['css'] ?? "" ?></textarea>
         </div>
         <div class="six columns">
-            <textarea name="result" id="result" rows="16" style="width: 99%;" placeholder="The final CSS will appear here."><?= $result ?></textarea>
+            <textarea name="result" id="result" rows="16" style="width: 99%;" placeholder="The final CSS will appear here."></textarea>
        </div>
     </div>
     <div class="row">

@@ -284,7 +284,7 @@ class Document {
         }
 
         //Footer
-        if (!$nofooter && $footer = $this->get_footer()) {
+        if (!$this->nofooter && $footer = $this->get_footer()) {
             include($footer);
         }
     }

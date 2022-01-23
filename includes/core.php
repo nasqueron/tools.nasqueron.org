@@ -261,7 +261,7 @@ function get_page_url () {
  * @return string the server URL
  */
 function get_server_url () {
-    if (isset($_SERVER['HTTP_HOST'])) {
+    if (isset($_SERVER['HTTP_HOST']) && str_contains($_SERVER['HTTP_HOST'], ":")) {
         list($name, $port) = explode(':', $_SERVER['HTTP_HOST'], 2);
     } else {
         $port = $_SERVER['SERVER_PORT'];
@@ -336,7 +336,7 @@ function get_current_url_fragments () {
  */
 function get_url_for () {
     global $Config;
-    $url = get_server_url() . '/' . $Config[BaseURL];
+    $url = get_server_url() . '/' . $Config['BaseURL'];
     if (func_num_args()) {
         $url .= implode('/', func_get_args());
     }

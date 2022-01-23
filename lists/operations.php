@@ -17,7 +17,7 @@
       <div class="row">
         <div class="large-3 columns">
           <h6 class="panel" style="text-align: center;">List A</h6>
-          <textarea name="lists[0]" rows=20><?= $_REQUEST['lists'][0] ?></textarea>
+          <textarea name="lists[0]" rows=20><?= $_REQUEST['lists'][0] ?? "" ?></textarea>
         </div>
 
         <div class="large-1 columns">
@@ -31,7 +31,7 @@
 
         <div class="large-3 columns">
           <h6 class="panel" style="text-align: center;">List B</h6>
-          <textarea name="lists[1]" rows=20><?= $_REQUEST['lists'][1] ?></textarea>
+          <textarea name="lists[1]" rows=20><?= $_REQUEST['lists'][1] ?? "" ?></textarea>
         </div>
 
         <div class="large-3 columns">

@@ -70,7 +70,7 @@ if (array_key_exists('expression', $_REQUEST)) {
             <input
                    name="expression" id="expression" type="text"
                    placeholder="The Nginx or Apache mod_rewrite-like regular expression"
-                   value="<?= $_REQUEST['expression'] ?>"
+                   value="<?= $_REQUEST['expression'] ?? "" ?>"
             />
             <?php if (isset($regexp) && $regexp->lastError) echo '<small class="error" style="font-weight: 400;">', $regexp->lastError, '</small>'; ?>
         </div>
@@ -78,7 +78,7 @@ if (array_key_exists('expression', $_REQUEST)) {
             <input
                    name="replacement" id="replacement" type="text"
                    placeholder="The list format. Use $1, $2, … to use the regexp groups."
-                   value="<?= $_REQUEST['replacement'] ?>"
+                   value="<?= $_REQUEST['replacement'] ?? "" ?>"
             />
         </div>
         <div class="one mobile-one columns">
@@ -90,7 +90,7 @@ if (array_key_exists('expression', $_REQUEST)) {
             <span class="prefix">Join</span>
         </div>
         <div class="ten mobile-six columns">
-            <input name="joinglue" id="joinglue" type="text" placeholder="Glue text to join the list into a string. Leave blank to concat without seperator. Don't forget to check the checkbox to enable." value="<?= $_REQUEST['joinglue'] ?>" onchange="updateUI();" />
+            <input name="joinglue" id="joinglue" type="text" placeholder="Glue text to join the list into a string. Leave blank to concat without seperator. Don't forget to check the checkbox to enable." value="<?= $_REQUEST['joinglue'] ?? "" ?>" onchange="updateUI();" />
         </div>
         <div class="one mobile-one columns" style="text-align: center;">
             <span id="join-checkbox"><input type="checkbox" id="join" name="join" <?= $enable_join ? 'checked ' : '' ?>/><br /><label for="join">Enable</label></span>
@@ -101,7 +101,7 @@ if (array_key_exists('expression', $_REQUEST)) {
             <span class="prefix">Split</span>
         </div>
         <div class="ten mobile-six columns">
-            <input name="splitseparator" id="splitseparator" type="text" placeholder="Separator text to split the list furthermore." value="<?= $_REQUEST['splitseparator'] ?>" onchange="updateUI();" />
+            <input name="splitseparator" id="splitseparator" type="text" placeholder="Separator text to split the list furthermore." value="<?= $_REQUEST['splitseparator'] ?? "" ?>" onchange="updateUI();" />
         </div>
         <div class="one mobile-one columns" style="text-align: center;">
             <span id="split-checkbox"><input type="checkbox" id="split" name="split" <?= $enable_split ? 'checked ' : '' ?>/><br /><label for="split">Enable</label></span>
@@ -109,7 +109,7 @@ if (array_key_exists('expression', $_REQUEST)) {
     </div>
     <div class="row collapse">
         <div class="six columns">
-            <textarea name="lists[0]" rows="16" style="width: 99%;" placeholder="The list to format"><?= $_REQUEST['lists'][0] ?></textarea>
+            <textarea name="lists[0]" rows="16" style="width: 99%;" placeholder="The list to format"><?= $_REQUEST['lists'][0] ?? "" ?></textarea>
         </div>
         <div class="six columns">
             <textarea name="lists[1]" rows="16" style="width: 99%;" placeholder="The formatted list will appear here."><?= $result ?></textarea>
