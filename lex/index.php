@@ -1,12 +1,12 @@
 <h2>Links</h2>
 <h3>Copyright</h3>
 <ul class="inline-list">
-  <li><a href="http://copyright.cornell.edu/resources/publicdomain.cfm">Copyright Term and the Public Domain in the United States</a></li>
+  <li><a href="https://guides.library.cornell.edu/copyright/publicdomain">Copyright Term and the Public Domain in the United States</a></li>
 </ul>
 
 <h3>References</h3>
 <ul class="inline-list">
-  <li><a href="https://legalworld.wolterskluwer.be/media/4562/guide-des-citations-references-abreviations-juridiques.pdf" title="Guide des citations, références et abréviations juridiques">Guide des citations, références et abréviations juridiques</a></li>
+  <li><a href="https://www.unamur.be/droit/bibliotheque/guidedulecteur/guide">Guide des citations, références et abréviations juridiques</a></li>
 </ul>
 
 <h3>Moniteur belge</h3>
