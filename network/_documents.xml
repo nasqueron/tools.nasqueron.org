@@ -4,4 +4,11 @@
 		<title>SMTP server search</title>
 		<description>Gets the first MX record from an e-mail address.</description>
 	</document>
+	<document>
+		<article>ip</article>
+		<title>IP address</title>
+		<description>Gets the IP address connecting to this resource.</description>
+		<noheader />
+		<nofooter />
+	</document>
 </documents>
