@@ -17,7 +17,7 @@
 </form>
 <?php
 function is_domain ($string) {
-	return preg_match($string, '/[a-zA-Z\d-]{,63}(\.[a-zA-Z\d-]{,63})*/');
+	return preg_match('/[a-zA-Z\d-]{,63}(\.[a-zA-Z\d-]{,63})*/', $string);
 }
 
 function print_mx ($domain) {
