@@ -19,5 +19,5 @@
     foreach ($variants as $variant) {
         echo "      <h3>English variant — $variant</h3>\n";
         $text = escapeshellarg($fortune);
-        echo "      <p>", rtrim(`echo $text | $variant`), "</p>\n\n";
+        echo "      <p>", rtrim(`echo $text | $variant` ?? ""), "</p>\n\n";
     }
