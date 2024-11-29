@@ -58,7 +58,7 @@ class RegexpFactory {
      */
     public function isValid () {
         $this->lastError = '';
-        set_error_handler('self::handleErrors');
+        set_error_handler([$this, "handleErrors"]);
         $result = preg_match($this->expression, "");
         restore_error_handler();
         if ($this->lastError === '' && $result === false) {
