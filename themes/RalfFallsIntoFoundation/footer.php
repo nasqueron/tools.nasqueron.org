@@ -12,10 +12,6 @@
         </div>
         <div class="three columns">
         	<dl>
-			<dt>Wikimedia dev</dt>
-			<dd><a href="/wikimedia/dev/feeds/">Gerrit activity feeds</a></dd>
-			<!--<dd>RSS generator</dd>-->
-
 			<dt>Wikimedia Writing Tools</dt>
 			<dd><a href="/wikimedia/write/sourcetemplatesgenerator/">Source templates generator</a></dd>
 

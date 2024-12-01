@@ -38,11 +38,6 @@ spl_autoload_register(function ($className) {
     $classes['ListOperation'] = './lists/ListOperation.php';
     $classes['RegexpFactory'] = './lists/RegexpFactory.php';
 
-    $classes['FeedEntry'] = './wikimedia/dev/feeds/index.php';
-    $classes['FeedIndex'] = './wikimedia/dev/feeds/index.php';
-    $classes['UsersFeedIndex'] = './wikimedia/dev/feeds/index.php';
-    $classes['ProjectsFeedIndex'] = './wikimedia/dev/feeds/index.php';
-
     //Loader
     if (array_key_exists($className, $classes)) {
         require_once($classes[$className]);
