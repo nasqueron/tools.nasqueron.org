@@ -6,13 +6,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "react-tools": ">= 0.13.3",
-    "react-select": ">= 0.4.9",
-    "react-textarea-autosize": ">= 2.3.1",
-    "babel": ">= 5.5.8",
-    "browserify": ">= 10.2.4",
-    "reactify": ">= 1.1.1",
-    "uglifyify": ">= 2.4.23"
+    "@babel/polyfill": "^7.12.1",
+    "babel-cli": "^6.26.0",
+    "browserify": "^10.2.4",
+    "create-react-class": "^15.7.0",
+    "react-select": "^0.4.9",
+    "react-textarea-autosize": "^2.3.1",
+    "react-tools": "^0.13.3",
+    "reactify": "^1.1.1",
+    "uglifyify": "^2.4.23"
   },
   "repository": {
     "type": "git",

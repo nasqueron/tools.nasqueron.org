@@ -12,11 +12,13 @@
     Dependencies
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
 
-require('babel/polyfill');
+require('@babel/polyfill');
 
 var React = require('react');
 var Select = require('react-select');
 var Textarea = require('react-textarea-autosize');
+
+const createReactClass = require('create-react-class');
 
 /*  -------------------------------------------------------------
     Strings and Array prototype functions
@@ -130,7 +132,7 @@ var CraftBluePrint = {
     Application UI
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   */
 
-var App = React.createClass({
+var App = createReactClass({
     getDefaultProps: function () {
         return {
             searchable: true,

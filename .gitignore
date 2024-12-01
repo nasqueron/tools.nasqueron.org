@@ -17,3 +17,4 @@ composer.lock
 # NPM
 node_modules/
 bundle.js
+package-lock.json
