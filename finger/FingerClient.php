@@ -41,7 +41,7 @@ class FingerClient {
     public $lastError;
 
     /**
-     * Blacklist of blocked hosts, where you can't finger
+     * Blocked hosts, where you can't finger
      * @var array
      */
     private $blockedHosts = [];
@@ -79,7 +79,7 @@ class FingerClient {
      */
     public function Run () {
         if (in_array($this->server, $this->blockedHosts)) {
-            $this->lastError = "This server $this->server has been blacklisted (probably because of frequent timeouts).";
+            $this->lastError = "This server $this->server has been blocked (probably because of frequent timeouts).";
             return false;
         }
 
@@ -215,18 +215,18 @@ class FingerClient {
     }
 
     /**
-     * Adds the specified hosts into the blacklist
+     * Adds the specified hosts into the blocklist
      *
      * @param array the list of hosts to add to the blacklist
      */
-    public function AddToBlacklist ($blockedHosts) {
+    public function AddToBlocklist ($blockedHosts) {
         $this->blockedHosts = array_merge($this->blockedHosts, $blockedHosts);
     }
 
     /**
-     * Clears the blacklist
+     * Clears the blocklist
      */
-    public function ClearBlacklist () {
+    public function ClearBlocklist () {
         $this->blockedHosts = [];
     }
 }

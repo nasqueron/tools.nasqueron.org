@@ -13,7 +13,7 @@ class ThimblController {
      *
      * @const
      */
-    const BLACKLIST_FILE = 'finger/blacklist.txt';
+    const BLOCKLIST_FILE = 'finger/blocklist.txt';
 
     ///
     /// Private properties
@@ -71,7 +71,7 @@ class ThimblController {
             return;
         }
 
-        $this->handleBlackList();
+        $this->handleBlockList();
 
         if (!$this->client->Run()) {
             $this->errors[] = $this->client->lastError;
@@ -104,17 +104,17 @@ class ThimblController {
     }
 
     /**
-     * Handles blacklist
+     * Handles blocklist
      */
-    private function handleBlackList () {
-        if (file_exists(self::BLACKLIST_FILE)) {
-            $blackListedServers = explode(
+    private function handleBlockList () {
+        if (file_exists(self::BLOCKLIST_FILE)) {
+            $blockListedServers = explode(
                 "\n",
                 trim(
-                    file_get_contents(self::BLACKLIST_FILE)
+                    file_get_contents(self::BLOCKLIST_FILE)
                 )
             );
-            $this->client->AddToBlacklist($blackListedServers);
+            $this->client->AddToBlocklist($blockListedServers);
         }
     }
 
