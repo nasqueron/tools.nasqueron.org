@@ -15,7 +15,7 @@
     }],
     "require": {
         "php": ">=5.4",
-        "dereckson/source-templates-generator": "dev-master",
+        "dereckson/source-templates-generator": "dev-main",
         "hpatoio/bitly-api": "~2.0"
     },
 	"support": {
